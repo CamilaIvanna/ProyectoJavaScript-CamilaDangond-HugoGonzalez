@@ -1,0 +1,24 @@
+html, body{
+    height: 100%;
+}
+body {
+    background-image: url(/imagenes/fondo.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat';
+}
+.container-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.inicioSesion{
+    width: 100vw;
+    height: 100vh;
+}
+.logo{
+    width: 30%;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME - Inicio de sesión</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="inicioSesion container-flex flex-column">
+        <img src="imagenes/iconLogo.png" alt="" class="logo">
+        <h1>Sucursal Personas</h1>
+        <h3><b>¡Hola!</b></h3>
+        <p>Ingresa los datos para acceder a tu cuenta.</p>
+        <form action="" class="container-flex flex-column">
+            <div class="container-flex">
+                <label for="opciones">Tipo de identificación:</label>
+                <select id="opciones" name="opciones">
+                <option value="uno">CC</option>
+                <option value="dos">CE</option>
+                <option value="tres">NIT</option>
+            </select>
+            </div>
+            <div class="container-flex">
+                <label for="identificación">Ingresa tu numero de identificación</label>
+                <input type="number" name="" id="identificacion" max="10" min="8">
+            </div>
+            <div class="container-flex">
+                <label for="psw">Ingresa tu clave</label>
+                <input type="password" name="" id="psw">
+            </div>
+        </form>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
