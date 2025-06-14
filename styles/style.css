@@ -2,14 +2,29 @@ html, body{
     height: 100%;
 }
 body {
+    font-family: 'Montserrat';
+}
+:root {
+  --color-principal:    #237583;
+  --color-secundario:   #64a9ab;
+  --color-terciario:    #3a8797;
+  --color-profundo:     #094d5e;
+  --color-clarito:      #faead0;
+  --color-blanco:       #fafafa;
+}
+.body-inicio{
     background-image: url(/imagenes/fondo.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    font-family: 'Montserrat';
 }
 .container-flex{
     display: flex;
+}
+.flex-center{
     justify-content: center;
+    align-items: center;
+}
+.flex-center-vertical{
     align-items: center;
 }
 .flex-column{
@@ -21,4 +36,34 @@ body {
 }
 .logo{
     width: 30%;
+}
+
+.flex-sb{
+    justify-content: space-between;
+}
+
+header{
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    background-color: var(--color-clarito);
+}
+nav{
+    margin: 0 1%;
+    height: 100%;
+}
+.img-contenedor{
+    height: 100%;  
+}
+.img-nav{
+    height: 50%;          
+    object-fit: contain;       
+}
+.flex-interno{
+    gap: 10PX;
+}
+.sucursal{
+    border-left: 1px solid black;
+    height: 100%;
+    padding-left: 5%;
 }

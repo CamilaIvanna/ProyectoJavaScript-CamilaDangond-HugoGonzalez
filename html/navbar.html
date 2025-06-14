@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barra de navegación</title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <nav class="container-flex flex-sb flex-center-vertical">
+            <div class="container-flex flex-interno flex-center-vertical img-contenedor">
+                <img src="/imagenes/menu.png" alt="" class="img-menu img-nav">
+                <img src="/imagenes/iconTS.png" alt="" class="logo img-nav">
+                <h1>ACME</h1>
+                <p class="sucursal container-flex flex-center-vertical">Sucursal Personas</p>
+            </div>
+            <div class="container-flex flex-center-vertical flex-interno img-contenedor">
+                <p class=""><b>Nombre del usuario</b></p>
+                <img src="/imagenes/cerrar-sesion-de-usuario.png" alt="" class="img-nav">
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
