@@ -3,18 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrate</title>
+    <title>ACME - Registrate</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
+
 </head>
-<body>
-    
+<body class="body-inicio">
+    <section class="registro container-flex flex-column flex-center">
+        <div class="contenedor-formularios">
+                <div class="container-flex flex-center flex-column inicio-up">
+                <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                <h1>Sucursal Personas</h1>
+                <h3><b>¡Hola!</b></h3>
+                <p>Ingresa tus datos para registrarte.</p>
+            </div>
+            <form action="" class="container-grid formulario-grid flex-column flex-center">
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/identificacion.png" alt="" class="icon-input">
+                    <select id="tipo-id" name="opciones" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="uno">CC</option>
+                        <option value="dos">CE</option>
+                        <option value="tres">NIT</option>
+                    </select>
+                    <label for="tipo-id">Tipo de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/user.png" alt="" class="icon-input">
+                    <input type="number" name="" id="identificacion" max="10" min="8" required>
+                    <label for="identificación">Número de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/nombre.png" alt="" class="icon-input">
+                    <input type="text" name="" id="name" max="20" min="3" required>
+                    <label for="name">Nombres:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/apellido.png" alt="" class="icon-input">
+                    <input type="text" name="" id="apellido" max="20" min="5" required>
+                    <label for="apellido">Apellidos:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/whatsapp.png" alt="" class="icon-input">
+                    <input type="number" name="" id="telefono" max="10" min="10" required>
+                    <label for="telefono">Telefono:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/correo.png" alt="" class="icon-input">
+                    <input type="email" name="" id="email"  required>
+                    <label for="email">Email:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                <img src="/imagenes/colombia.png" alt="" class="icon-input">
+                <select id="departamento" name="departamento" required>
+                    <option value=""></option>
+                </select>
+                <label for="departamento">Departamento:</label>
+                </div>
+
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/ciudad.png" alt="" class="icon-input">
+                    <select id="ciudad" name="ciudad" required>
+                        <option value=""></option>
+                    </select>
+                    <label for="ciudad">Ciudad:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/direccion.png" alt="" class="icon-input">
+                    <input type="text" name="" id="direccion" required>
+                    <label for="direccion">Dirección:</label>
+                </div>                                             
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/generos.png" alt="" class="icon-input">
+                    <select id="genero" name="opciones" required>
+                        <option value="" disabled selected></option>
+                        <option value="uno">Femenino</option>
+                        <option value="dos">Masculino</option>
+                        <option value="tres">Otro</option>
+                    </select>
+                    <label for="genero">Género:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/clave.png" alt="" class="icon-input">
+                    <input type="password" name="" id="psw" required>
+                    <label for="psw">Clave:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/check.png" alt="" class="icon-input">
+                    <input type="password" name="" id="validar-psw" required>
+                    <label for="validar-psw">Vuelve a escribir la clave:</label>
+                </div>
+                <input type="button" value="Registrarme" class="b-registro">
+            </form>
+            <a class="iniciar container-flex flex-center" href="/index.html"><b>Iniciar Sesión</b></a>
+        </div>
+    </section>
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
+    <script src="/js/registro.js"></script>
 </body>
 </html>

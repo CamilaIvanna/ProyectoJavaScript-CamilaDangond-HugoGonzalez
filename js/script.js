@@ -1,9 +1,9 @@
-fetch("html/navbar.html")
+fetch("/html/navbar.html")
     .then(response => response.text())
     .then(data => document.getElementById("navbar").innerHTML = data);
 
     // Cargar footer
-fetch("html/footer.html")
+fetch("/html/footer.html")
     .then(response => response.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 
@@ -25,3 +25,6 @@ document.querySelectorAll('.div-input input, .div-input select').forEach((input)
     }
   });
 });
+
+
+

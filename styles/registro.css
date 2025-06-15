@@ -1,0 +1,17 @@
+.registro{
+    width: 100%;
+    height: 100%;
+}
+.iniciar{
+    height: 2.5rem;
+}
+section.registro .contenedor-formularios{
+    width: 80%;
+}
+.formulario-grid{
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.b-registro{
+    grid-column: span 3;
+}

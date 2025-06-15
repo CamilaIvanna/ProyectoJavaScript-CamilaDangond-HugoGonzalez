@@ -12,9 +12,9 @@
 </head>
 <body class="body-inicio">
     <section class="inicioSesion container-flex flex-column flex-center">
-        <div class="incioS-contenedor">
+        <div class="contenedor-formularios">
             <div class="container-flex flex-center flex-column inicio-up">
-                <img src="imagenes/iconLogo.png" alt="" class="logo">
+                <img src="imagenes/iconLogo.png" alt="" class="formulario-logo">
                 <h1>Sucursal Personas</h1>
                 <h3><b>¡Hola!</b></h3>
                 <p>Ingresa los datos para acceder a tu cuenta.</p>
@@ -22,12 +22,13 @@
             <form action="" class="container-flex flex-column flex-center">
                 <div class="container-flex flex-center div-input with-icon">
                     <img src="/imagenes/identificacion.png" alt="" class="icon-input">
-                    <select id="opciones" name="opciones" required>
+                    <select id="tipo-id" name="opciones" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
                         <option value="uno">CC</option>
                         <option value="dos">CE</option>
                         <option value="tres">NIT</option>
                     </select>
-                    <label for="opciones">Tipo de identificación:</label>
+                    <label for="tipo-id">Tipo de identificación:</label>
                 </div>
                 <div class="container-flex flex-center div-input with-icon">
                     <img src="/imagenes/user.png" alt="" class="icon-input">

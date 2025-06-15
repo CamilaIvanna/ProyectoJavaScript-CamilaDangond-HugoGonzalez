@@ -2,9 +2,16 @@
 html, body{
     height: auto;
     min-height: 100vh;
-}
-body {
     font-family: 'Montserrat';
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.body-inicio{
+    background-image: url(/imagenes/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 :root {
   --color-principal:    #237583;
@@ -125,4 +132,23 @@ input[type="button"]:hover {
 }
 .div-input.with-icon .icon-input{
     left: 0.1rem;
+}
+
+/* Se realiza la estilizacion de los ocntenedores de formularios y sus imagenes */
+.contenedor-formularios{
+    background-color: var(--color-blanco);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 40%;
+    margin:2.5rem auto; 
+}
+.formulario-logo{
+    height: 20vh;
+}
+.inicio-up{
+    margin-bottom: 1.5rem;
+}
+.container-grid{
+  display: grid;
 }
