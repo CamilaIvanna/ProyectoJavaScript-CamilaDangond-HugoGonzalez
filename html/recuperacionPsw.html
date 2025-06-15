@@ -6,15 +6,69 @@
     <title>Olvidaste tu contraeña</title>
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/recuperarPsw.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
 </head>
-<body>
-    
+<body class="body-inicio">
+        <section class="recuperar-psw container-flex flex-column flex-center" >
+        <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+            <div class="container-flex flex-center flex-column inicio-up">
+                <a href="/index.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                <h1>Sucursal Personas</h1>
+                <h3><b>¡Vaya, se te olvido tu contra!</b></h3>
+                <p>Ingresa los datos para recuperarla.</p>
+            </div>
+            <form action="" class="container-flex flex-column flex-center">
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/identificacion.png" alt="" class="icon-input">
+                    <select id="tipo-id" name="opciones" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="uno">CC</option>
+                        <option value="dos">CE</option>
+                        <option value="tres">NIT</option>
+                    </select>
+                    <label for="tipo-id">Tipo de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/user.png" alt="" class="icon-input">
+                    <input type="number" name="" id="identificacion" max="10" min="8" required>
+                    <label for="identificación">Número de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/correo.png" alt="" class="icon-input">
+                    <input type="email" name="" id="email"  required>
+                    <label for="email">Email:</label>
+                </div>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </form>
+        </div>
+        <div class="contenedor-formularios" id="contenedor-formulario-crearPsw">         
+            <div class="container-flex flex-center flex-column inicio-up">
+                <a href="/index.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                <h1>Sucursal Personas</h1>
+                <h3><b>¡Creemos una contra nueva!</b></h3>
+                <p>Digita y verifica tu contra.</p>
+            </div>
+            <form action="" class="container-flex flex-column flex-center">
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/clave.png" alt="" class="icon-input">
+                    <input type="password" name="" id="psw" required>
+                    <label for="psw">Clave nueva:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/check.png" alt="" class="icon-input">
+                    <input type="password" name="" id="validar-psw" required>
+                    <label for="validar-psw">Vuelve a escribir la clave:</label>
+                </div>
+                <input type="button" value="Nueva contra" onclick="crearPsw()">
+            </form>
+        </div>    
+    </section>
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
+    <script src="/js/recuperarPsw.js"></script>
 </body>
 </html>
