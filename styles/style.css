@@ -1,6 +1,7 @@
 /* Se hace la estilización de los estilos principales */
 html, body{
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
 }
 body {
     font-family: 'Montserrat';
@@ -12,6 +13,9 @@ body {
   --color-profundo:     #094d5e;
   --color-clarito:      #faead0;
   --color-blanco:       #fafafa;
+}
+p, h1, h2, h3, h4, h5, h6{
+    text-align: center;
 }
 .container-flex{
     display: flex;
@@ -32,85 +36,59 @@ body {
 .flex-sa{
     justify-content: space-evenly;
 }
-/* Se estilizo la barra de navegación */
-header{
-    height: 10vh;
-    position: fixed;
-    width: 100%;
-    background-color: var(--color-clarito);
-}
-nav{
-    margin: 0 1%;
-    height: 100%;
-}
-.img-contenedor{
-    height: 100%;  
-}
-.img-nav{
-    height: 50%;          
-    object-fit: contain;       
-}
-.flex-interno{
-    gap: 10PX;
-}
-.sucursal{
-    border-left: 1px solid black;
-    height: 100%;
-    padding-left: 5%;
-}
-/* Se estiliza la pagina de inicio de sesion */
-.body-inicio{
-    background-image: url(/imagenes/fondo.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-.inicioSesion{
-    width: 100vw;
-    height: 100vh;
-}
-.logo{
-    width: 30%;
-}
-/* Estilizacion del footer */
-.icon-redes{
-    border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
-    background-color: var(--color-blanco);
-}
-.icon-redes img{
-    height: 1.3rem;
-    width: 1.3rem;
-}
-.bg-light{
-    background-color: var(--color-clarito);
-}
-.bg-dark{
-    background-color: #094d5e;
-    padding: 2rem 0;
-}
-a {
-  color: inherit;
-  text-decoration: none;  
-}
-.bg-dark{
-    color: var(--color-blanco);
-    gap: 2rem;
-}
-.contactenos{
-    margin-left: 1rem;
-}
-.politicas{
-    border-right: 1px solid ;
-    border-left: 1px solid ;
-    padding: 0 2rem;
-}
-.redes-vigilado{
+label{
     margin-right: 1rem;
 }
-.redes{
-    margin-bottom: 2rem;
+.div-input{
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
-.footer-img{
-    height: 10rem;
+.div-input input,
+.div-input select {
+    all: unset;
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    border-bottom: 2px solid #237583;
+    background-color: white;
+    font-size: 1rem;
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+}
+.div-input label {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    color: #666;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    padding: 0 0.25rem;
+}
+.div-input input:focus + label,
+.div-input input:valid + label,
+.div-input select:focus + label,
+.div-input select:valid + label {
+    top: -0.6rem;
+    left: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--color-principal);
+}
+input, select{
+    all: unset;
+    width: 10rem;
+    border-radius: 5px;
+    height: 2rem;
+    border-bottom: 2px solid #237583 ;
+    padding-left: 1rem;
+}
+input[type="button"]{
+    background-color: var(--color-profundo);
+    color: var(--color-blanco);
+    width: 100%;
+    height: 3rem;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
 }

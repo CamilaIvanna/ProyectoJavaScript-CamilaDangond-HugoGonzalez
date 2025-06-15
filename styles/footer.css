@@ -1,0 +1,44 @@
+
+/* Estilizacion del footer */
+.icon-redes{
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--color-blanco);
+}
+.icon-redes img{
+    height: 1.3rem;
+    width: 1.3rem;
+}
+.bg-light{
+    background-color: var(--color-clarito);
+}
+.bg-dark{
+    background-color: #094d5e;
+    padding: 2rem 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;  
+}
+.bg-dark{
+    color: var(--color-blanco);
+    gap: 2rem;
+}
+.contactenos{
+    margin-left: 1rem;
+}
+.politicas{
+    border-right: 1px solid ;
+    border-left: 1px solid ;
+    padding: 0 2rem;
+}
+.redes-vigilado{
+    margin-right: 1rem;
+}
+.redes{
+    margin-bottom: 2rem;
+}
+.footer-img{
+    height: 10rem;
+}

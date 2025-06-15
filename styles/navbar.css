@@ -1,0 +1,26 @@
+/* Se estilizo la barra de navegación */
+header{
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    background-color: var(--color-clarito);
+}
+nav{
+    margin: 0 1%;
+    height: 100%;
+}
+.img-contenedor{
+    height: 100%;  
+}
+.img-nav{
+    height: 50%;          
+    object-fit: contain;       
+}
+.flex-interno{
+    gap: 10PX;
+}
+.sucursal{
+    border-left: 1px solid black;
+    height: 100%;
+    padding-left: 5%;
+}
