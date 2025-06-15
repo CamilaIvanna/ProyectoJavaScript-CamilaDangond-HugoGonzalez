@@ -108,7 +108,6 @@ input, select {
   color: var(--color-principal);
 }
 
-/* Botón de envío */
 input[type="button"] {
   background-color: var(--color-profundo);
   color: var(--color-blanco);
@@ -122,7 +121,7 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-  background-color: #073b49; /* un poco más oscuro */
+  background-color: #073b49; 
 }
 .div-input.with-icon .icon-input{
     left: 0.1rem;
