@@ -14,8 +14,14 @@ body {
   --color-clarito:      #faead0;
   --color-blanco:       #fafafa;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+  text-align: center;  
+}
 p, h1, h2, h3, h4, h5, h6{
     text-align: center;
+    margin: 0.5rem;
 }
 .container-flex{
     display: flex;
@@ -36,59 +42,88 @@ p, h1, h2, h3, h4, h5, h6{
 .flex-sa{
     justify-content: space-evenly;
 }
-label{
-    margin-right: 1rem;
+
+/* Reset básico para inputs y selects */
+input, select {
+  all: unset;
+  box-sizing: border-box;
 }
-.div-input{
-    position: relative;
-    width: 100%;
-    margin-bottom: 1.5rem;
+
+/* Estilos base del contenedor de inputs */
+.div-input {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
+
+/* Inputs y selects dentro de div-input */
 .div-input input,
 .div-input select {
-    all: unset;
-    width: 100%;
-    padding: 1.2rem 0.5rem 0.5rem;
-    border-bottom: 2px solid #237583;
-    background-color: white;
-    font-size: 1rem;
-    border-radius: 5px 5px 0 0;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 1.2rem 0.5rem 0.5rem;
+  border-bottom: 2px solid var(--color-principal);
+  background-color: white;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
 }
+
+/* Cuando hay ícono: ajustamos el padding */
+.div-input.with-icon input,
+.div-input.with-icon select {
+  padding-left: 2.5rem;
+}
+
+/* Ícono en el input */
+.icon-input {
+  position: absolute;
+  left: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.7;
+}
+
+/* Label sobre el input */
 .div-input label {
-    position: absolute;
-    top: 1rem;
-    left: 0.5rem;
-    color: #666;
-    font-size: 1rem;
-    pointer-events: none;
-    transition: all 0.2s ease-in-out;
-    background-color: white;
-    padding: 0 0.25rem;
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  color: #666;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  padding: 0 0.25rem;
 }
-.div-input input:focus + label,
-.div-input input:valid + label,
-.div-input select:focus + label,
-.div-input select:valid + label {
-    top: -0.6rem;
-    left: 0.4rem;
-    font-size: 0.75rem;
-    color: var(--color-principal);
+
+/* Ajustamos el label si hay ícono */
+.div-input.with-icon label {
+  left: 2.5rem;
 }
-input, select{
-    all: unset;
-    width: 10rem;
-    border-radius: 5px;
-    height: 2rem;
-    border-bottom: 2px solid #237583 ;
-    padding-left: 1rem;
+
+/* Label se eleva si el input tiene contenido o está enfocado */
+.div-input label.active {
+  top: -0.6rem;
+  left: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--color-principal);
 }
-input[type="button"]{
-    background-color: var(--color-profundo);
-    color: var(--color-blanco);
-    width: 100%;
-    height: 3rem;
-    border-radius: 30px;
-    text-align: center;
-    font-weight: bold;
+
+/* Botón de envío */
+input[type="button"] {
+  background-color: var(--color-profundo);
+  color: var(--color-blanco);
+  width: 100%;
+  height: 3rem;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover {
+  background-color: #073b49; /* un poco más oscuro */
+}
+.div-input.with-icon .icon-input{
+    left: 0.1rem;
 }

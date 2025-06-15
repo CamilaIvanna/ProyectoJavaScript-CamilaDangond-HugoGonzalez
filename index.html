@@ -8,32 +8,44 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body class="body-inicio">
     <section class="inicioSesion container-flex flex-column flex-center">
-        <img src="imagenes/iconLogo.png" alt="" class="logo">
-        <h1>Sucursal Personas</h1>
-        <h3><b>¡Hola!</b></h3>
-        <p>Ingresa los datos para acceder a tu cuenta.</p>
-        <form action="" class="container-flex flex-column flex-center">
-            <div class="container-flex flex-center">
-                <label for="opciones">Tipo de identificación:</label>
-                <select id="opciones" name="opciones">
-                <option value="uno">CC</option>
-                <option value="dos">CE</option>
-                <option value="tres">NIT</option>
-            </select>
+        <div class="incioS-contenedor">
+            <div class="container-flex flex-center flex-column inicio-up">
+                <img src="imagenes/iconLogo.png" alt="" class="logo">
+                <h1>Sucursal Personas</h1>
+                <h3><b>¡Hola!</b></h3>
+                <p>Ingresa los datos para acceder a tu cuenta.</p>
             </div>
-            <div class="container-flex flex-center">
-                <label for="identificación">Ingresa tu numero de identificación</label>
-                <input type="number" name="" id="identificacion" max="10" min="8">
-            </div>
-            <div class="container-flex flex-center">
-                <label for="psw">Ingresa tu clave</label>
-                <input type="password" name="" id="psw">
-            </div>
-        </form>
+            <form action="" class="container-flex flex-column flex-center">
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/identificacion.png" alt="" class="icon-input">
+                    <select id="opciones" name="opciones" required>
+                        <option value="uno">CC</option>
+                        <option value="dos">CE</option>
+                        <option value="tres">NIT</option>
+                    </select>
+                    <label for="opciones">Tipo de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/user.png" alt="" class="icon-input">
+                    <input type="number" name="" id="identificacion" max="10" min="8" required>
+                    <label for="identificación">Número de identificación:</label>
+                </div>
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/clave.png" alt="" class="icon-input">
+                    <input type="password" name="" id="psw" required>
+                    <label for="psw">Clave:</label>
+                </div>
+                <input type="button" value="Ingresar">
+            </form>
+            <a class="unete container-flex flex-center" href=""><b>¿Olvidaste tu contraseña?</b></a>
+            <a class="unete container-flex flex-center" href=""><b>Únete a ACME</b></a>
+        </div>
     </section>
+    <footer id="footer"></footer>
     <script src="js/script.js"></script>
 </body>
 </html>
