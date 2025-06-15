@@ -152,3 +152,25 @@ input[type="button"]:hover {
 .container-grid{
   display: grid;
 }
+/* Boton de cerrar */
+
+.img-cerrar{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.cerrar{
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #64a9ab; 
+    float: right;
+    margin-right: -2rem;
+    margin-top: -1.5rem;
+    margin-left: auto;
+}
+.cerrar:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 16px rgba(9, 77, 94, 0.7);
+}
