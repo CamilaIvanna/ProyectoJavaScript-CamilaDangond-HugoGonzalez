@@ -157,6 +157,9 @@ input[type="button"]:hover {
 .container-grid{
   display: grid;
 }
+.grid-center{
+  place-items: center; /* equivale a justify-items + align-items */
+}
 /* Boton de cerrar */
 
 .img-cerrar{

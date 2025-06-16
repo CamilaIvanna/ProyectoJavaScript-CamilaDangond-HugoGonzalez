@@ -1,5 +1,10 @@
 
 /* Estilizacion del footer */
+footer{
+  box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.2); /* sombra más intensa */
+  position: relative;
+  z-index: 10;
+}
 .icon-redes{
     border-radius: 50%;
     height: 2.5rem;

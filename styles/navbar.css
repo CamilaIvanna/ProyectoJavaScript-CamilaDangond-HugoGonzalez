@@ -4,6 +4,7 @@ header{
     position: fixed;
     width: 100%;
     background-color: var(--color-clarito);
+    z-index: 10;
 }
 nav{
     margin: 0 1%;
