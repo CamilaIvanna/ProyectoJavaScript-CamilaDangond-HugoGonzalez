@@ -201,3 +201,6 @@ input[type="button"]:hover {
 li{
   list-style: none;
 }
+.oculto {
+  display: none;
+}
