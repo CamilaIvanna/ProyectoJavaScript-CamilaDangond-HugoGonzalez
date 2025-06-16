@@ -6,15 +6,37 @@
     <title>Transacciones</title>
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/transacciones.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
 </head>
 <body>
-    
+    <header id="navbar"></header>
+    <main>
+        <section class="resumen-transacciones">
+            <div class="contenedor-tabla">
+                <div class="container-flex transacciones flex-column ">
+                    <div class="item-transacciones titulo-transacciones"><h2>Resumen de movimientos</h2></div>
+                    <div class="item-transacciones container-grid encabezado-transacciones">
+                        <div class="fecha"><b>Fecha y hora</b></div>
+                        <div class="referencia"><b>Referencia</b></div>
+                        <div class="tipo-transaccion"><b>Tipo</b></div>
+                        <div class="descripcion"><b>Descripción</b></div>
+                        <div class="valor"><b>Valor</b></div>
+                    </div>
+                    <div class="item-transacciones container-grid fila-transacciones ">
+                        <div class="fecha">99/99/99 99:99:99</div>
+                        <div class="referencia">SWDHWEFLEF1</div>
+                        <div class="tipo-transaccion">Transferencia</div>
+                        <div class="descripcion">Transferia 30293490330</div>
+                        <div class="valor">$1'000.000</div>
+                    </div>
+                </div>
+                <input type="button" value="Imprimir">
+            </div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>

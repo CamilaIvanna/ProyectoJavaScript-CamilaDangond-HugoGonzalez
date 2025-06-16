@@ -6,7 +6,10 @@ html, body{
     overflow-x: hidden;
     margin: 0;
 }
-
+main{
+    margin-top: 10vh;
+    background-color: var(--color-blanco);
+}
 .body-inicio{
     background-image: url(/imagenes/fondo.png);
     background-size: cover;
