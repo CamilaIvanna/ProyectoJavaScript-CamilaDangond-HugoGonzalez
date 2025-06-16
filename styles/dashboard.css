@@ -131,3 +131,6 @@ a img{
 a p{
     text-align: center;
 }
+.tarjeta div h3, .tarjeta div p, .tarjeta p{
+    text-align: left;
+}

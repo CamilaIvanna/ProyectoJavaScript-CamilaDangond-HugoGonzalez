@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retiros</title>
+    <title>Retira dinero</title>
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
 </head>
 <body>
-    
+    <header id="navbar"></header>
+    <main class="fondo-secundario">
+        <section class="recuperar-psw container-flex flex-column flex-center" >
+            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+                <div class="container-flex flex-center flex-column inicio-up">
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                    <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                    <h1>Sucursal Personas</h1>
+                    <h3><b>¿Necesitas dinero?</b></h3>
+                    <p>Vas a retirar dinero de tu cuenta. <b>N°</b><b class="cuenta">30293490330 </b> Ingresa el valor</p>
+                </div>
+                <form action="" class="container-flex flex-column flex-center">
+                  
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/valor.png" alt="" class="icon-input">
+                        <input type="number" name="" id="valor"  required>
+                        <label for="valor">Valor:</label>
+                    </div>
+                    <input type="button" value="Retirar" onclick="retirar()">
+                </form>
+            </div>   
+        </section>
+    </main>
+    <footer id="footer"></footer>  
+    <script src="/js/script.js"></script>
 </body>
 </html>
