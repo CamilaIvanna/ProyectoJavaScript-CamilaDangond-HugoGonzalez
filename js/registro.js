@@ -74,7 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
         return hashHex;
     }
 
-    registroBtn.addEventListener("click", async function () {
+    // Función para generar número de cuenta único de 10 dígitos
+    function generarNumeroCuenta(usuarios) {
+        let cuenta;
+        do {
+            cuenta = Math.floor(1000000000 + Math.random() * 9000000000); // 10 dígitos
+        } while (usuarios.some(u => u.numeroCuenta === cuenta.toString()));
+        return cuenta.toString();
+    }
+
+    registroBtn.addEventListener("click", async function (event) {
+        event.preventDefault();
+
         const campos = [
             "tipo-id", "identificacion", "name", "apellido",
             "telefono", "email", "departamento", "ciudad",
@@ -163,6 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Generar número de cuenta y fecha
+        const numeroCuenta = generarNumeroCuenta(usuarios);
+        const fechaCreacion = new Date().toISOString();
+
         // Hashear clave
         const claveHash = await hashPassword(clave);
 
@@ -177,20 +192,33 @@ document.addEventListener("DOMContentLoaded", function () {
             ciudad: document.getElementById("ciudad").value,
             direccion: document.getElementById("direccion").value,
             genero: document.getElementById("genero").value,
-            clave: claveHash
+            clave: claveHash,
+            numeroCuenta: numeroCuenta,
+            fechaCreacion: fechaCreacion
         };
 
         // Guardar usuario
         usuarios.push(datosRegistro);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
+        // Mostrar resumen con SweetAlert2
         Swal.fire({
             icon: 'success',
             title: '¡Registro exitoso!',
-            showConfirmButton: false,
-            timer: 2000
+            html: `
+                <p><b>Nombre:</b> ${datosRegistro.nombres} ${datosRegistro.apellidos}</p>
+                <p><b>Número de cuenta:</b> ${datosRegistro.numeroCuenta}</p>
+                <p><b>Fecha de creación:</b> ${new Date(datosRegistro.fechaCreacion).toLocaleString()}</p>
+                <br>
+                <a href="/index.html" style="color:rgb(86, 149, 230); text-decoration: underline;
+                font-family: Montserrat, sans-serif; font-weight: bold; font-size: 1.2rem;">Iniciar sesión</a>
+            `,
+            showConfirmButton: false
         });
-
         document.querySelector("form").reset();
+        document.getElementById("tipo-id").selectedIndex = 0;
+        document.getElementById("departamento").selectedIndex = 0;
+        document.getElementById("ciudad").selectedIndex = 0;
+        document.getElementById("genero").selectedIndex = 0;
     });
 });
