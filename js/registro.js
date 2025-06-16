@@ -60,3 +60,122 @@ departamentoSelect.addEventListener("change", () => {
     ciudadSelect.appendChild(option);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const registroBtn = document.querySelector(".b-registro");
+
+    // Función para hashear la contraseña con SHA-256
+    async function hashPassword(password) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+        return hashHex;
+    }
+
+    registroBtn.addEventListener("click", async function () {
+        const campos = [
+            "tipo-id", "identificacion", "name", "apellido",
+            "telefono", "email", "departamento", "ciudad",
+            "direccion", "genero", "psw", "validar-psw"
+        ];
+
+        // Validar campos vacíos
+        for (const id of campos) {
+            const input = document.getElementById(id);
+            if (!input || !input.value.trim()) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Campo requerido',
+                    text: 'Por favor completa todos los campos.',
+                    confirmButtonColor: '#3085d6'
+                });
+                input.focus();
+                return;
+            }
+        }
+
+        // Validar teléfono
+        const telefono = document.getElementById("telefono").value.trim();
+        if (!/^\d{10}$/.test(telefono)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Teléfono inválido',
+                text: 'Debe tener exactamente 10 dígitos numéricos.',
+            });
+            document.getElementById("telefono").focus();
+            return;
+        }
+
+        // Validar email
+        const email = document.getElementById("email").value.trim();
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!correoValido.test(email)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Correo inválido',
+                text: 'Ingresa un correo electrónico válido.',
+            });
+            document.getElementById("email").focus();
+            return;
+        }
+
+        // Validar contraseña
+        const clave = document.getElementById("psw").value.trim();
+        const confirmarClave = document.getElementById("validar-psw").value.trim();
+        const claveSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+        if (!claveSegura.test(clave)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Clave insegura',
+                html: 'Debe tener al menos 8 caracteres, <br>una mayúscula, una minúscula, un número y un símbolo.',
+            });
+            document.getElementById("psw").focus();
+            return;
+        }
+
+        // Confirmar contraseña
+        if (clave !== confirmarClave) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Las contraseñas no coinciden',
+                text: 'Verifica que ambas sean iguales.',
+            });
+            document.getElementById("validar-psw").focus();
+            return;
+        }
+
+        // Hashear clave
+        const claveHash = await hashPassword(clave);
+
+        const datosRegistro = {
+            tipoId: document.getElementById("tipo-id").value,
+            identificacion: document.getElementById("identificacion").value,
+            nombres: document.getElementById("name").value,
+            apellidos: document.getElementById("apellido").value,
+            telefono: telefono,
+            email: email,
+            departamento: document.getElementById("departamento").value,
+            ciudad: document.getElementById("ciudad").value,
+            direccion: document.getElementById("direccion").value,
+            genero: document.getElementById("genero").value,
+            clave: claveHash
+        };
+
+        // Guardar en localStorage
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios.push(datosRegistro);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+        Swal.fire({
+            icon: 'success',
+            title: '¡Registro exitoso!',
+            showConfirmButton: false,
+            timer: 2000
+        });
+
+        document.querySelector("form").reset();
+    });
+});
