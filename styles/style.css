@@ -16,6 +16,13 @@ main{
     background-repeat: no-repeat;
     background-position: center;
 }
+.fondo-secundario{
+    width: 100%;
+    background-image: url(/imagenes/lineas-fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 :root {
   --color-principal:    #237583;
   --color-secundario:   #64a9ab;
@@ -153,7 +160,7 @@ input[type="button"]:hover {
     background-color: var(--color-blanco);
     padding: 2rem 3rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     width: 40%;
     margin:2.5rem auto; 
 }

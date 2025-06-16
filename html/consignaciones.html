@@ -8,13 +8,41 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
 </head>
-<body>
-    
+<body >
+    <header id="navbar"></header>
+    <main class="fondo-secundario">
+        <section class="recuperar-psw container-flex flex-column flex-center" >
+            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+                <div class="container-flex flex-center flex-column inicio-up">
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                    <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                    <h1>Sucursal Personas</h1>
+                    <h3><b>¡Envia dinero!</b></h3>
+                    <p>Ingresa los datos para pasar tu cash.</p>
+                </div>
+                <form action="" class="container-flex flex-column flex-center">
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/cuenta.png" alt="" class="icon-input">
+                        <input type="number" name="" id="numero-cuenta" max="10" min="8" required>
+                        <label for="numero-cuenta">Número de cuenta bancaria:</label>
+                    </div>
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/user.png" alt="" class="icon-input">
+                        <input type="text" name="" id="usuario"  required>
+                        <label for="usuario">Enviar a:</label>
+                    </div>                    
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/valor.png" alt="" class="icon-input">
+                        <input type="number" name="" id="valor"  required>
+                        <label for="valor">Valor:</label>
+                    </div>
+                    <input type="button" value="Enviar" onclick="transferir()">
+                </form>
+            </div>   
+        </section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>
