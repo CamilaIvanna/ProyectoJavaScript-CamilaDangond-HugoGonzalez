@@ -45,7 +45,7 @@
                                 <p id="saldo-cuenta">$000.000</p>
                             </div>
                             <p id="nombre-usuario">NOMBRE DE USUARIO</p>  
-                            <a href="" class="container-flex flex-center-vertical"><img src="/imagenes/recargar.png" alt="">&nbsp Recargar</a>
+                            <a href="/html/recargar.html" class="container-flex flex-center-vertical" target="_blank"><img src="/imagenes/recargar.png" alt="">&nbsp Recargar</a>
                         </div>
                     </div>
                     <div class="item item-grid2">
@@ -54,47 +54,46 @@
                     <div class="item item-grid3">
                         <a class="container-flex flex-center flex-column" href="/html/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/transferir.png" alt=""> <p>Envia dinero</p></a></div>
                     <div class="item item-grid4">
-                        <a class="container-flex flex-center flex-column" href="/html/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/retiro.png" alt=""><p>Retira dinero</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/retiro.html" target="_blank" rel="noopener noreferrer"><img src="/imagenes/retiro.png" alt=""><p>Retira dinero</p></a></div>
                     <div class="item item-grid5">
-                        <a class="container-flex flex-center flex-column" href="/html/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/servicios.png" alt=""><p>Paga tus servicios</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/servicios.html" target="_blank" rel="noopener noreferrer"><img src="/imagenes/servicios.png" alt=""><p>Paga tus servicios</p></a></div>
                     <div class="item item-grid6">
                         <a class="container-flex flex-center flex-column" href="/html/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/extracto.png" alt=""><p>Tus extractos</p></a></div>
                     <div class="item item-grid7">
-                        <a class="container-flex flex-center flex-column" href="/html/" target="_blank" rel="noopener noreferrer"><img src="/imagenes/certificado.png" alt=""><p>Certificado bancario</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/certificado.html" target="_blank" rel="noopener noreferrer"><img src="/imagenes/certificado.png" alt=""><p>Certificado bancario</p></a></div>
                 </div>
             </div>
 
         </section>
     </main>
     <footer id="footer"></footer>
-    <script src="/js/script.js"></script>
     <script >
-    document.addEventListener("DOMContentLoaded", () => {
-    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+        document.addEventListener("DOMContentLoaded", () => {
+        const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-    if (!usuario) {
-        Swal.fire({
-        icon: 'warning',
-        title: 'Sesión no iniciada',
-        text: 'Por favor inicia sesión para acceder a tu cuenta.',
-        confirmButtonText: 'Ir al login'
-        }).then(() => {
-        window.location.href = "/index.html";
+        if (!usuario) {
+            Swal.fire({
+            icon: 'warning',
+            title: 'Sesión no iniciada',
+            text: 'Por favor inicia sesión para acceder a tu cuenta.',
+            confirmButtonText: 'Ir al login'
+            }).then(() => {
+            window.location.href = "/index.html";
+            });
+            return;
+        }
+
+        // Formatear fecha
+        const fechaFormateada = new Date(usuario.fechaCreacion).toLocaleDateString();
+
+        // Establecer valores en la interfaz
+        document.getElementById("nombre-usuario").textContent = `${usuario.nombres} ${usuario.apellidos}`;
+        document.getElementById("numero-cuenta").textContent = usuario.numeroCuenta;
+        document.getElementById("fecha-creacion").textContent = fechaFormateada;
+        document.getElementById("saldo-cuenta").textContent = usuario.saldo !== undefined
+            ? `$${Number(usuario.saldo).toLocaleString()}`
+            : "$0";
         });
-        return;
-    }
-
-    // Formatear fecha
-    const fechaFormateada = new Date(usuario.fechaCreacion).toLocaleDateString();
-
-    // Establecer valores en la interfaz
-    document.getElementById("nombre-usuario").textContent = `${usuario.nombres} ${usuario.apellidos}`;
-    document.getElementById("numero-cuenta").textContent = usuario.numeroCuenta;
-    document.getElementById("fecha-creacion").textContent = fechaFormateada;
-    document.getElementById("saldo-cuenta").textContent = usuario.saldo !== undefined
-        ? `$${Number(usuario.saldo).toLocaleString()}`
-        : "$0";
-    });
 
     </script>
 
