@@ -30,6 +30,9 @@ p, h1, h2, h3, h4, h5, h6{
     text-align: center;
     margin: 0.5rem;
 }
+.contenedor-formularios div h1{
+  text-align: center ;
+}
 .container-flex{
     display: flex;
 }
@@ -56,9 +59,12 @@ p, h1, h2, h3, h4, h5, h6{
 }
 
 /* Reset básico para inputs y selects */
-input, select {
+input, select,button {
   all: unset;
   box-sizing: border-box;
+}
+button{
+  cursor: pointer;
 }
 
 /* Estilos base del contenedor de inputs */

@@ -12,6 +12,14 @@ aside{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* display: none; */
 }
+#menu-lateral {
+    display: none !important;
+    transition: all 0.3s ease-in-out;
+}
+
+#menu-lateral.visible {
+    display: block !important;
+}
 .menu-desplegable li{
     height: 4rem;
     width: 100%;
