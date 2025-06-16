@@ -24,9 +24,9 @@
                     <img src="/imagenes/identificacion.png" alt="" class="icon-input">
                     <select id="tipo-id" name="opciones" required>
                         <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="uno">CC</option>
-                        <option value="dos">CE</option>
-                        <option value="tres">NIT</option>
+                        <option value="CC">CC</option>
+                        <option value="CE">CE</option>
+                        <option value="NIT">NIT</option>
                     </select>
                     <label for="tipo-id">Tipo de identificación:</label>
                 </div>
@@ -40,13 +40,14 @@
                     <input type="password" name="" id="psw" required>
                     <label for="psw">Clave:</label>
                 </div>
-                <input type="button" value="Ingresar">
+                <input type="button" value="Ingresar" class="b-ingreso">
             </form>
             <a class="unete container-flex flex-center" href="/html/recuperacionPsw.html"><b>¿Olvidaste tu contraseña?</b></a>
             <a class="unete container-flex flex-center" href="/html/registro.html"><b>Únete a ACME</b></a>
         </div>
     </section>
     <footer id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
