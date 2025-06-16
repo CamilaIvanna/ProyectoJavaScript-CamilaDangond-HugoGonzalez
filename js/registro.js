@@ -64,7 +64,7 @@ departamentoSelect.addEventListener("change", () => {
 document.addEventListener("DOMContentLoaded", function () {
     const registroBtn = document.querySelector(".b-registro");
 
-    // 🔐 Hashea la contraseña usando SHA-256
+    // Hashea la contraseña usando SHA-256
     async function hashPassword(password) {
         const encoder = new TextEncoder();
         const data = encoder.encode(password);
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return hashHex;
     }
 
-    // 🎲 Genera un número de cuenta único de 10 dígitos
+    // Genera un número de cuenta único de 10 dígitos
     function generarNumeroCuenta(usuarios) {
         let cuenta;
         do {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return cuenta.toString();
     }
 
-    // 🔁 Validaciones comunes
+    // Validaciones comunes
     function validarCamposRequeridos(campos) {
         for (const id of campos) {
             const input = document.getElementById(id);
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        // 🛑 Validar usuario duplicado
+        //  Validar usuario duplicado
         const yaExiste = usuarios.some(usuario => usuario.identificacion === cedula);
         if (yaExiste) {
             Swal.fire({
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // ✅ Crear usuario nuevo
+        // Crear usuario nuevo
         const numeroCuenta = generarNumeroCuenta(usuarios);
         const fechaCreacion = new Date().toISOString();
         const claveHash = await hashPassword(clave);

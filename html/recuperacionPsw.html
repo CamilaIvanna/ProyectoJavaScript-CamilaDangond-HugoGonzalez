@@ -25,9 +25,9 @@
                     <img src="/imagenes/identificacion.png" alt="" class="icon-input">
                     <select id="tipo-id" name="opciones" required>
                         <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="uno">CC</option>
-                        <option value="dos">CE</option>
-                        <option value="tres">NIT</option>
+                        <option value="CC">CC</option>
+                        <option value="CE">CE</option>
+                        <option value="NIT">NIT</option>
                     </select>
                     <label for="tipo-id">Tipo de identificación:</label>
                 </div>
@@ -63,12 +63,13 @@
                     <input type="password" name="" id="validar-psw" required>
                     <label for="validar-psw">Vuelve a escribir la clave:</label>
                 </div>
-                <input type="button" value="Nueva contra" onclick="crearPsw()">
+                <input type="button" value="Nueva contraseña" onclick="crearPsw()">
             </form>
         </div>    
     </section>
     <footer id="footer"></footer>
     <script src="/js/script.js"></script>
     <script src="/js/recuperarPsw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
