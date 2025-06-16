@@ -1,0 +1,14 @@
+.fila-comprobante{
+    grid-template-columns: repeat(2,50%);
+    text-align: center;
+}
+.fila-comprobante div{
+    border: 1px solid #237583;
+    padding: 1rem;
+}
+.img-exito{
+    height: 3rem;
+}
+.flex-comprobante{
+    margin-bottom: 2rem;
+}
