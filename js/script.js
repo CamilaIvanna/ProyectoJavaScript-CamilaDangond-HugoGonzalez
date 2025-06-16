@@ -3,11 +3,18 @@ fetch("/html/navbar.html")
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
 
-    // Mostrar nombre del usuario
+    // Mostrar nombre y número de cuenta del usuario
     const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
     const nombre = document.getElementById("nombre-navbar");
-    if (usuario && nombre) {
-      nombre.textContent = `${usuario.nombres} ${usuario.apellidos}`;
+    const cuenta = document.getElementById("n-cuenta");
+
+    if (usuario) {
+      if (nombre) {
+        nombre.textContent = `${usuario.nombres} ${usuario.apellidos}`;
+      }
+      if (cuenta) {
+        cuenta.textContent = `N° de cuenta: ${usuario.numeroCuenta}`;
+      }
     }
 
     // Funcionalidad de cerrar sesión
