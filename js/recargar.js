@@ -34,3 +34,13 @@ listaBancosColombia.forEach(nombreBanco => {
     option.textContent = nombreBanco;
     bancoSelect.appendChild(option);
 });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+        if (usuario) {
+        const cuentaElemento = document.querySelector(".cuenta");
+        if (cuentaElemento) {
+            cuentaElemento.textContent = usuario.numeroCuenta;
+        }
+        }
+    });
