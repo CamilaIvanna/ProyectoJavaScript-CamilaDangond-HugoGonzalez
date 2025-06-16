@@ -26,9 +26,9 @@
                     <img src="/imagenes/identificacion.png" alt="" class="icon-input">
                     <select id="tipo-id" name="opciones" required>
                         <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="uno">CC</option>
-                        <option value="dos">CE</option>
-                        <option value="tres">NIT</option>
+                        <option value="CC">CC</option>
+                        <option value="CE">CE</option>
+                        <option value="NIT">NIT</option>
                     </select>
                     <label for="tipo-id">Tipo de identificación:</label>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="container-flex flex-center div-input with-icon">
                     <img src="/imagenes/whatsapp.png" alt="" class="icon-input">
-                    <input type="number" name="" id="telefono" max="10" min="10" required>
+                    <input type="number" name="" id="telefono" pattern="\d{10}" required>
                     <label for="telefono">Telefono:</label>
                 </div>
                 <div class="container-flex flex-center div-input with-icon">
@@ -81,9 +81,9 @@
                     <img src="/imagenes/generos.png" alt="" class="icon-input">
                     <select id="genero" name="opciones" required>
                         <option value="" disabled selected></option>
-                        <option value="uno">Femenino</option>
-                        <option value="dos">Masculino</option>
-                        <option value="tres">Otro</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otro">Otro</option>
                     </select>
                     <label for="genero">Género:</label>
                 </div>
@@ -105,5 +105,6 @@
     <footer id="footer"></footer>
     <script src="/js/script.js"></script>
     <script src="/js/registro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
