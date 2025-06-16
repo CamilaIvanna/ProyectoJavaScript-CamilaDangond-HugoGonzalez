@@ -40,7 +40,7 @@ p, h1, h2, h3, h4, h5, h6{
     text-align: center;
     margin: 0.5rem;
 }
-.contenedor-formularios div h1{
+.contenedor-formularios div h1,div h3,div p{
   text-align: center ;
 }
 .container-flex{

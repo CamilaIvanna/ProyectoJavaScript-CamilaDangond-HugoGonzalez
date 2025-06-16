@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recarga tu cuenta</title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header id="navbar"></header>
+    <main class="fondo-secundario">
+        <section class="recuperar-psw container-flex flex-column flex-center" >
+            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+                <div class="container-flex flex-center flex-column inicio-up">
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                    <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                    <h1>Sucursal Personas</h1>
+                    <h3><b>¡Recarga tu cuenta!</b></h3>
+                    <p>Ingresa los datos para recargar tu cuenta. <b>N°</b><b class="cuenta">30293490330</b></p>
+                </div>
+                <form action="" class="container-flex flex-column flex-center">
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/banco.png" alt="" class="icon-input">
+                        <select id="banco" name="banco" required>
+                            <option value=""></option>
+                        </select>
+                        <label for="banco">Desde el banco:</label>
+                    </div>                  
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/valor.png" alt="" class="icon-input">
+                        <input type="number" name="" id="valor"  required>
+                        <label for="valor">Valor:</label>
+                    </div>
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/user.png" alt="" class="icon-input">
+                        <input type="text" name="" id="usuario"  required>
+                        <label for="usuario">Usuario del banco:</label>
+                    </div> 
+                <div class="container-flex flex-center div-input with-icon">
+                    <img src="/imagenes/clave.png" alt="" class="icon-input">
+                    <input type="password" name="" id="psw" required>
+                    <label for="psw">Clave del banco:</label>
+                </div> 
+                    <input type="button" value="Recargar" onclick="recargar()">
+                </form>
+            </div>   
+        </section>
+    </main>
+    <footer id="footer"></footer>  
+    <script src="/js/script.js"></script>
+    <script src="/js/recargar.js"></script>
+</body>
+</html>
