@@ -40,5 +40,24 @@ ul{
 .item-grid1{
     grid-column: span 3;
 }
+.tarjeta{
+ background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(9, 77, 94, 0.25); /* sombra con color-profundo */
+  padding: 1.5rem;
+  color: var(--color-blanco);
+    height:204px;
+    width: 324px;
+    border-radius: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem;
+}
+.tarjeta img{
+    height: 3rem;
+}
+.tarjeta div p,h3{
+    height: 1rem;
+}
 
 
