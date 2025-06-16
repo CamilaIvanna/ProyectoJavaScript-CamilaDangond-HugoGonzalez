@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Swal.fire({
                 icon: 'error',
                 title: 'Clave insegura',
-                html: 'Debe tener al menos 8 caracteres, <br>una mayúscula, una minúscula, un número y un símbolo.',
+                html: 'Debe tener al menos 8 caracteres,<br>una mayúscula, una minúscula, un número y un símbolo.',
             });
             document.getElementById("psw").focus();
             return;
@@ -147,12 +147,28 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        const cedula = document.getElementById("identificacion").value.trim();
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        // Validar si el usuario ya existe por cédula
+        const yaExiste = usuarios.some(usuario => usuario.identificacion === cedula);
+        if (yaExiste) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Usuario ya registrado',
+                text: 'Ya existe un usuario con esa cédula.',
+                confirmButtonColor: '#d33'
+            });
+            document.getElementById("identificacion").focus();
+            return;
+        }
+
         // Hashear clave
         const claveHash = await hashPassword(clave);
 
         const datosRegistro = {
             tipoId: document.getElementById("tipo-id").value,
-            identificacion: document.getElementById("identificacion").value,
+            identificacion: cedula,
             nombres: document.getElementById("name").value,
             apellidos: document.getElementById("apellido").value,
             telefono: telefono,
@@ -164,8 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             clave: claveHash
         };
 
-        // Guardar en localStorage
-        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        // Guardar usuario
         usuarios.push(datosRegistro);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
