@@ -64,7 +64,7 @@ departamentoSelect.addEventListener("change", () => {
 document.addEventListener("DOMContentLoaded", function () {
     const registroBtn = document.querySelector(".b-registro");
 
-    // Función para hashear la contraseña con SHA-256
+    // 🔐 Hashea la contraseña usando SHA-256
     async function hashPassword(password) {
         const encoder = new TextEncoder();
         const data = encoder.encode(password);
@@ -74,13 +74,83 @@ document.addEventListener("DOMContentLoaded", function () {
         return hashHex;
     }
 
-    // Función para generar número de cuenta único de 10 dígitos
+    // 🎲 Genera un número de cuenta único de 10 dígitos
     function generarNumeroCuenta(usuarios) {
         let cuenta;
         do {
-            cuenta = Math.floor(1000000000 + Math.random() * 9000000000); // 10 dígitos
+            cuenta = Math.floor(1000000000 + Math.random() * 9000000000);
         } while (usuarios.some(u => u.numeroCuenta === cuenta.toString()));
         return cuenta.toString();
+    }
+
+    // 🔁 Validaciones comunes
+    function validarCamposRequeridos(campos) {
+        for (const id of campos) {
+            const input = document.getElementById(id);
+            if (!input || !input.value.trim()) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Campo requerido',
+                    text: 'Por favor completa todos los campos.',
+                    confirmButtonColor: '#3085d6'
+                });
+                input.focus();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validarTelefono(telefono) {
+        if (!/^\d{10}$/.test(telefono)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Teléfono inválido',
+                text: 'Debe tener exactamente 10 dígitos numéricos.'
+            });
+            document.getElementById("telefono").focus();
+            return false;
+        }
+        return true;
+    }
+
+    function validarEmail(email) {
+        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!correoValido.test(email)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Correo inválido',
+                text: 'Ingresa un correo electrónico válido.'
+            });
+            document.getElementById("email").focus();
+            return false;
+        }
+        return true;
+    }
+
+    function validarClave(clave, confirmarClave) {
+        const claveSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (!claveSegura.test(clave)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Clave insegura',
+                html: 'Debe tener al menos 8 caracteres,<br>una mayúscula, una minúscula, un número y un símbolo.'
+            });
+            document.getElementById("psw").focus();
+            return false;
+        }
+
+        if (clave !== confirmarClave) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Las contraseñas no coinciden',
+                text: 'Verifica que ambas sean iguales.'
+            });
+            document.getElementById("validar-psw").focus();
+            return false;
+        }
+
+        return true;
     }
 
     registroBtn.addEventListener("click", async function (event) {
@@ -92,76 +162,21 @@ document.addEventListener("DOMContentLoaded", function () {
             "direccion", "genero", "psw", "validar-psw"
         ];
 
-        // Validar campos vacíos
-        for (const id of campos) {
-            const input = document.getElementById(id);
-            if (!input || !input.value.trim()) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Campo requerido',
-                    text: 'Por favor completa todos los campos.',
-                    confirmButtonColor: '#3085d6'
-                });
-                input.focus();
-                return;
-            }
-        }
+        if (!validarCamposRequeridos(campos)) return;
 
-        // Validar teléfono
         const telefono = document.getElementById("telefono").value.trim();
-        if (!/^\d{10}$/.test(telefono)) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Teléfono inválido',
-                text: 'Debe tener exactamente 10 dígitos numéricos.',
-            });
-            document.getElementById("telefono").focus();
-            return;
-        }
-
-        // Validar email
         const email = document.getElementById("email").value.trim();
-        const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!correoValido.test(email)) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Correo inválido',
-                text: 'Ingresa un correo electrónico válido.',
-            });
-            document.getElementById("email").focus();
-            return;
-        }
-
-        // Validar contraseña
         const clave = document.getElementById("psw").value.trim();
         const confirmarClave = document.getElementById("validar-psw").value.trim();
-        const claveSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-
-        if (!claveSegura.test(clave)) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Clave insegura',
-                html: 'Debe tener al menos 8 caracteres,<br>una mayúscula, una minúscula, un número y un símbolo.',
-            });
-            document.getElementById("psw").focus();
-            return;
-        }
-
-        // Confirmar contraseña
-        if (clave !== confirmarClave) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Las contraseñas no coinciden',
-                text: 'Verifica que ambas sean iguales.',
-            });
-            document.getElementById("validar-psw").focus();
-            return;
-        }
-
         const cedula = document.getElementById("identificacion").value.trim();
+
+        if (!validarTelefono(telefono)) return;
+        if (!validarEmail(email)) return;
+        if (!validarClave(clave, confirmarClave)) return;
+
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        // Validar si el usuario ya existe por cédula
+        // 🛑 Validar usuario duplicado
         const yaExiste = usuarios.some(usuario => usuario.identificacion === cedula);
         if (yaExiste) {
             Swal.fire({
@@ -174,11 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Generar número de cuenta y fecha
+        // ✅ Crear usuario nuevo
         const numeroCuenta = generarNumeroCuenta(usuarios);
         const fechaCreacion = new Date().toISOString();
-
-        // Hashear clave
         const claveHash = await hashPassword(clave);
 
         const datosRegistro = {
@@ -194,27 +207,29 @@ document.addEventListener("DOMContentLoaded", function () {
             genero: document.getElementById("genero").value,
             clave: claveHash,
             numeroCuenta: numeroCuenta,
-            fechaCreacion: fechaCreacion
+            fechaCreacion: fechaCreacion,
+            saldo: 0  // 💰 Saldo inicial
         };
 
-        // Guardar usuario
         usuarios.push(datosRegistro);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-        // Mostrar resumen con SweetAlert2
         Swal.fire({
             icon: 'success',
             title: '¡Registro exitoso!',
             html: `
                 <p><b>Nombre:</b> ${datosRegistro.nombres} ${datosRegistro.apellidos}</p>
                 <p><b>Número de cuenta:</b> ${datosRegistro.numeroCuenta}</p>
-                <p><b>Fecha de creación:</b> ${new Date(datosRegistro.fechaCreacion).toLocaleString()}</p>
+                <p><b>Saldo inicial:</b> $0</p>
+                <p><b>Fecha de creación:</b> ${new Date(fechaCreacion).toLocaleString()}</p>
                 <br>
                 <a href="/index.html" style="color:rgb(86, 149, 230); text-decoration: underline;
                 font-family: Montserrat, sans-serif; font-weight: bold; font-size: 1.2rem;">Iniciar sesión</a>
             `,
             showConfirmButton: false
         });
+
+        // 🧹 Limpiar formulario
         document.querySelector("form").reset();
         document.getElementById("tipo-id").selectedIndex = 0;
         document.getElementById("departamento").selectedIndex = 0;

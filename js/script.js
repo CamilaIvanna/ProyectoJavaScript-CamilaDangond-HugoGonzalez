@@ -1,12 +1,28 @@
-// Cargar navbar
 fetch("/html/navbar.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
 
+    // Mostrar nombre del usuario
+    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+    const nombre = document.getElementById("nombre-navbar");
+    if (usuario && nombre) {
+      nombre.textContent = `${usuario.nombres} ${usuario.apellidos}`;
+    }
+
+    // Funcionalidad de cerrar sesión
+    const cerrarSesion = document.getElementById("cerrar-sesion");
+    if (cerrarSesion) {
+      cerrarSesion.addEventListener("click", (e) => {
+        e.preventDefault(); // evita navegación por defecto
+        localStorage.removeItem("usuarioActivo"); // limpia sesión
+        window.location.href = "/index.html"; // redirige
+      });
+    }
+
+    // Menú lateral
     const boton = document.getElementById("boton-menu");
     const aside = document.getElementById("menu-lateral");
-
     if (boton && aside) {
       boton.addEventListener("click", () => {
         aside.classList.toggle("visible");
@@ -15,6 +31,7 @@ fetch("/html/navbar.html")
       boton.style.display = "none";
     }
   });
+
 
 // Cargar footer
 fetch("/html/footer.html")
@@ -87,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (usuario) {
       Swal.fire({
         icon: 'success',
-        title: `¡Bienvenido ${usuario.nombres}!`,
+        title: `¡Buen día ${usuario.nombres}!`,
         text: 'Has iniciado sesión correctamente.'
       }).then(() => {
         // Guardar sesión activa (opcional)
