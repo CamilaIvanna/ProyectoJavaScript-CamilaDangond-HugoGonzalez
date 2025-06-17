@@ -179,21 +179,20 @@ input[type="button"]:hover {
 }
 /* Boton de cerrar */
 
-.img-cerrar{
-    width: 1.5rem;
-    height: 1.5rem;
-}
 .cerrar{
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 5px solid #64a9ab; 
+    width: 5rem;
+    height: 2rem;
+    border-radius: 20px;
+    background-color: var(--color-terciario);
+    border: 5px solid var(--color-terciario); 
     float: right;
     margin-right: -2rem;
     margin-top: -1.5rem;
     margin-left: auto;
+    color: var(--color-blanco);
+    padding-left: 5px;
+    box-shadow:0 6px 10px rgba(0, 0, 0, 0.3); ;
 }
 .cerrar:hover {
     transform: scale(1.05);
@@ -210,4 +209,10 @@ li{
 }
 .filtro div {
   margin-bottom: 1.5rem;
+}
+.icon-svg{
+  color: var(--color-blanco);
+}
+.contenedor-cerrar{
+  margin-bottom: 2rem;
 }
