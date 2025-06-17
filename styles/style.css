@@ -10,6 +10,9 @@ main{
     margin-top: 10vh;
     background-color: var(--color-blanco);
 }
+    .formulario-logo {
+      height: 10rem;
+}
 .body-inicio{
     background-image: url(/imagenes/fondo.png);
     background-size: cover;
@@ -245,6 +248,10 @@ body {
     .img-media{
       height: 3rem;
     }
+     .formulario-unete {
+    display: flex;
+    flex-direction: column;
+} 
     
 
 }
@@ -311,9 +318,16 @@ body {
       font-size: 2rem;
     }
     .formulario-logo {
-    height: 10vh;
+      height: 5rem;
 }
-}
+ .formulario-unete {
+    display: flex;
+    flex-direction: column;
+} 
+section.registro .contenedor-formularios {
+    width: 69%;
+    padding: 1.5rem;
+}}
 
 
 .bg-light {
