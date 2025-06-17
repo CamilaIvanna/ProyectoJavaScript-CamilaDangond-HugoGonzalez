@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault(); 
 
       const fecha = new Date();
-      const fechaISO = fecha.toISOString(); // ✅ Guardar en formato ISO
+      const fechaISO = fecha.toISOString(); // Guardar en formato ISO
 
-      localStorage.setItem("fechaServicio", fechaISO); // ✅ Esto sí se cambia
+      localStorage.setItem("fechaServicio", fechaISO); // Esto sí se cambia
 
       // Espera un momento para asegurarse que se guarda
       setTimeout(() => {
