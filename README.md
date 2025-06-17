@@ -4,7 +4,8 @@
   <img src="imagenes/iconLogo.png" alt="Logo Banco Acme" width="150">
 </p>
 
-Aplicación desarrollada como solución integral de autogestión para los usuarios del Banco Acme. Permite el registro de usuarios, la gestión de cuentas, realización de transacciones, pagos de servicios, generación de extractos y certificados. Toda la información se persiste en el navegador usando `localStorage` con estructuras JSON.
+Aplicación desarrollada como 
+ integral de autogestión para los usuarios del Banco Acme. Permite el registro de usuarios, la gestión de cuentas, realización de transacciones, pagos de servicios, generación de extractos y certificados. Toda la información se persiste en el navegador usando `localStorage` con estructuras JSON.
 
 ---
 
