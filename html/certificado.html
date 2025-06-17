@@ -26,13 +26,13 @@
                         </div>
                         <div>
                             <br>
-                            <p class="fecha">00/00/00 00:00:00</p>
+                            <p class="fecha-servicio">00/00/00 00:00:00</p>
                             <br>
                             <p class="texto-certificado">
                                 <b>Señores:</b>
-                                <br>
+                                <br><br>
                                 A quien pueda interesar
-                                <br><br><br>
+                                <br>
                                 ACME S.A. se permite informar que <b class="nombre"></b>
                                 identificado(a) con CC. <b class="identificacion"></b> a la fecha de expedición de esta certificación, tiene con el Banco los siguientes productos:
                             </p>
@@ -58,17 +58,30 @@
                             <small>*Importante: Esta constancia sólo hace referencia a los productos mencionados anteriormente.</small>
                             <br><br>
                             *Si desea verificar la veracidad de esta información, puede comunicarse con la Sucursal Telefónica Bancolombia a los siguientes números: +57 315 447 47 89, +57 313 359 30 73.
-                            <br><br>
                         </p>
-                        <img src="/imagenes/FirmaCamilaDangond.png" alt="">
-                        <p>
-                            <small>Camila Ivanna Dangond Tarazona <br>
-                            Lider Área de Conocimiento Autoservicios.
-                            </small>
-                        </p>
-                        <img src="/imagenes/iconLogo.png" alt="">
-                        <br>
-                        <img src="/imagenes/vigilado-negro-png.png" alt="">
+                        <div class="firmas container-flex flex-sa">
+                            <div class="firma">
+                                <img src="/imagenes/FirmaCamilaDangond.png" alt="">
+                                <p>
+                                    <small>Camila Ivanna Dangond Tarazona <br>
+                                    Lider Área de Conocimiento Autoservicios.
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="firma">
+                                <img src="/imagenes/FirmaHugoG.jpeg" alt="" class="firmaHugo">
+                                <p>
+                                    <small>Hugo Andrés González Delgado <br>
+                                    Lider Área de Desarrollo.
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="container-flex flex-center flex-sa footer-certificado">
+                            <img src="/imagenes/iconLogo.png" alt="">
+                            <img src="/imagenes/vigilado-negro-png.png" alt="">
+                        </div>
+
                     </div>
                 </div>
                 <input type="button" value="Imprimir" onclick="imprimir()">
@@ -79,5 +92,7 @@
     <script src="/js/script.js"></script>
     <script src="/js/comprobantes.js"></script>
     <script src="/js/datos.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/certificado.js"></script>
 </body>
 </html>
