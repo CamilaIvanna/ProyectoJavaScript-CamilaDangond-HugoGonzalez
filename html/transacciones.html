@@ -16,7 +16,16 @@
         <section class="resumen-transacciones">
             <div class="contenedor-tabla">
                 <div class="container-flex transacciones flex-column ">
-                    <div class="item-transacciones titulo-transacciones"><h2>Resumen de movimientos</h2></div>
+                    <div class="item-transacciones titulo-transacciones">
+                        <div class="container-flex flex-center">
+                            <img src="/imagenes/iconLogo.png" alt="" class="img5rem ">
+                        </div>
+                        <h2>Resumen de movimientos</h2>
+                        <div>
+                            <p>Apreciado cliente <span class="nombre"></span> <span class="tipoId"></span>. <span class="identificacion"></span></p>
+                            <p>Los últimos movimientos de su cuenta <b>N°</b><b class="cuenta"></b> son:</p>
+                        </div>
+                    </div>
                     <div class="item-transacciones container-grid encabezado-transacciones">
                         <div class="fecha"><b>Fecha y hora</b></div>
                         <div class="referencia"><b>Referencia</b></div>
@@ -32,11 +41,13 @@
                         <div class="valor">$1'000.000</div>
                     </div>
                 </div>
-                <input type="button" value="Imprimir">
+                <input type="button" value="Imprimir" onclick="imprimir()">
             </div>
         </section>
     </main>
     <footer id="footer"></footer>
     <script src="/js/script.js"></script>
+    <script src="/js/comprobantes.js"></script>
+    <script src="/js/datos.js"></script>
 </body>
 </html>

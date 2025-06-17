@@ -6,15 +6,63 @@
     <title>Tus extractos</title>
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/transacciones.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <style>
-        body{
-            background-image: none;
-        }
-    </style>
 </head>
 <body>
-    
+    <header id="navbar"></header>
+    <main>
+        <section class="extractos">
+            <div class="contenedor-tabla">
+                <div class="filtro">
+                    <div>
+                        <h2>Elije el rango de fecha de tus movimientos:</h2>
+                    </div>
+                    <div class="div-input">
+                        <label for="fecha-inicio" class="active">Desde</label>
+                        <input type="date" id="fecha-inicio">
+                    </div>
+                    <div class="div-input">
+                        <label for="fecha-fin" class="active">Hasta</label>
+                        <input type="date" id="fecha-fin">
+                    </div>
+                    <input type="button" value="Filtrar" onclick="filtrarPorFecha()">
+                </div>
+                <div class="container-flex transacciones flex-column ">
+                    <div class="item-transacciones titulo-transacciones">
+                        <div class="container-flex flex-center">
+                            <img src="/imagenes/iconLogo.png" alt="" class="img5rem ">
+                        </div>
+                        <h2>Extracto Bancario</h2>
+                        <div>
+                            <p>Apreciado cliente <span class="nombre"></span> <span class="tipoId"></span>. <span class="identificacion"></span></p>
+                            <p>Número de cuenta: <span class="cuenta">ncuentea</span> - Saldo actual: <span class="saldo">saldo actual</span></p>
+                            <p>Tu extracto de: <span>Fecha inicio</span> - <span>Fecha fin</span> :</p>
+                        </div>
+                    </div>
+                    <div class="item-transacciones container-grid encabezado-transacciones">
+                        <div class="fecha"><b>Fecha y hora</b></div>
+                        <div class="referencia"><b>Referencia</b></div>
+                        <div class="tipo-transaccion"><b>Tipo</b></div>
+                        <div class="descripcion"><b>Descripción</b></div>
+                        <div class="valor"><b>Valor</b></div>
+                    </div>
+                    <div class="item-transacciones container-grid fila-transacciones ">
+                        <div class="fecha">99/99/99 99:99:99</div>
+                        <div class="referencia">SWDHWEFLEF1</div>
+                        <div class="tipo-transaccion">Transferencia</div>
+                        <div class="descripcion">Transferia 30293490330</div>
+                        <div class="valor">$1'000.000</div>
+                    </div>
+                </div>
+                <input type="button" value="Imprimir" onclick="imprimir()">
+            </div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
+    <script src="/js/comprobantes.js"></script>
+    <script src="/js/datos.js"></script>
 </body>
 </html>

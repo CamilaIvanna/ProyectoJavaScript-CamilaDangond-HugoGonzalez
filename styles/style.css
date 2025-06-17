@@ -146,6 +146,7 @@ input[type="button"] {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 input[type="button"]:hover {
@@ -203,4 +204,10 @@ li{
 }
 .oculto {
   display: none;
+}
+.img5rem{
+  height: 5rem;
+}
+.filtro div {
+  margin-bottom: 1.5rem;
 }
