@@ -24,3 +24,23 @@
             ? `$${Number(usuario.saldo).toLocaleString()}`
             : "$0";
         });
+// Guardar la fecha al hacer clic en el botón de certificado
+document.addEventListener("DOMContentLoaded", () => {
+  const enlaceCertificado = document.getElementById("ir-certificado");
+
+  if (enlaceCertificado) {
+    enlaceCertificado.addEventListener("click", (e) => {
+      e.preventDefault(); 
+
+      const fecha = new Date();
+      const fechaISO = fecha.toISOString(); // ✅ Guardar en formato ISO
+
+      localStorage.setItem("fechaServicio", fechaISO); // ✅ Esto sí se cambia
+
+      // Espera un momento para asegurarse que se guarda
+      setTimeout(() => {
+        window.location.href = enlaceCertificado.href;
+      }, 50); // 50 milisegundos es suficiente
+    });
+  }
+});
