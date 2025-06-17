@@ -311,9 +311,9 @@ function filtrarPorFecha() {
     return;
   }
 
-  const inicio = new Date(fechaInicio);
-  const fin = new Date(fechaFin);
-  fin.setHours(23, 59, 59, 999);
+ const inicio = new Date(`${fechaInicio}T00:00:00.000`);
+ const fin = new Date(`${fechaFin}T23:59:59.999`);
+
 
   if (inicio > fin) {
     Swal.fire({
@@ -357,8 +357,9 @@ function mostrarTransacciones(lista, fechaInicio, fechaFin) {
   const spanFin = document.getElementById('fecha-fin-span');
 
   if (spanInicio && spanFin) {
-    spanInicio.textContent = new Date(fechaInicio).toLocaleDateString('es-CO');
-    spanFin.textContent = new Date(fechaFin).toLocaleDateString('es-CO');
+  spanInicio.textContent = new Date(`${fechaInicio}T00:00:00`).toLocaleDateString('es-CO');
+  spanFin.textContent = new Date(`${fechaFin}T00:00:00`).toLocaleDateString('es-CO');
+
   }
 
   const transaccionesOrdenadas = lista.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
