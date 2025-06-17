@@ -39,6 +39,7 @@
 .contendor-final-certificado{
     border: 1px solid #094d5e47;
     border-top: 0;
+    padding-left: 1rem;
 }
 .contendor-final-certificado p{
     text-align: left;
@@ -48,4 +49,23 @@
 }
 small{
     color: gray;
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .img-sup-certificado {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-image: url('/imagenes/img-certificados.png') !important;
+  }
+
+  .contendor-final-certificado img {
+    display: block !important;
+  }
+  .c-t, .c-t-2{
+    text-align: left !important;
+    padding-left: 20px;}
 }
