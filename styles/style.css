@@ -139,7 +139,7 @@ button{
   color: var(--color-principal);
 }
 
-input[type="button"] {
+input[type="button"], .iniciar {
   background-color: var(--color-profundo);
   color: var(--color-blanco);
   width: 100%;
@@ -343,3 +343,7 @@ section.registro .contenedor-formularios {
 }
 .img-footer{
   height: 5rem; }
+
+.iniciar{
+  background-color: #64a9ab;
+}
