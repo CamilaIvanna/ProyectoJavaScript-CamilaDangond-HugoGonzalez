@@ -35,16 +35,6 @@ listaBancosColombia.forEach(nombreBanco => {
     bancoSelect.appendChild(option);
 });
 
-<<<<<<< HEAD
-    document.addEventListener("DOMContentLoaded", () => {
-        const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
-        if (usuario) {
-        const cuentaElemento = document.querySelector(".cuenta");
-        if (cuentaElemento) {
-            cuentaElemento.textContent = usuario.numeroCuenta;
-        }
-        }
-    });
 function generarReferencia() {
     return Math.floor(1000000000 + Math.random() * 9000000000).toString();
 }
