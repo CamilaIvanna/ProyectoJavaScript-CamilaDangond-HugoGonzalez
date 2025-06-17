@@ -1,31 +1,47 @@
 <!-- AGREGAR NAV EN HTML
- <div id="navbar"></div>
-  -->
+<div id="navbar"></div>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barra de navegación</title>
+
+    <!-- Estilos globales y específicos -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/navbar.css">
 </head>
 <body>
     <header>
         <nav class="container-flex flex-sb flex-center-vertical">
+            
+            <!-- Parte izquierda del nav -->
             <div class="container-flex flex-interno flex-center-vertical img-contenedor">
-                <button id="boton-menu" onclick="desplegar"><img src="/imagenes/menu.png" alt="" class="img-menu img-nav" ></button>   
-                <a href="/html/dashboard.html" class="container-flex"><img src="/imagenes/iconTS.png" alt="" class="logo img-nav"><h1>ACME</h1></a>
+                <button id="boton-menu" onclick="desplegar()">
+                    <img src="/imagenes/menu.png" alt="Menú" class="img-menu img-nav">
+                </button>
+
+                <a href="/html/dashboard.html" class="container-flex">
+                    <img src="/imagenes/iconTS.png" alt="Logo ACME" class="logo img-nav">
+                    <h1>ACME</h1>
+                </a>
+
                 <p class="sucursal container-flex flex-center-vertical">Sucursal Personas</p>
             </div>
+
+            <!-- Parte derecha del nav -->
             <div class="container-flex flex-center-vertical flex-interno img-contenedor">
                 <b><p id="nombre-navbar">Nombre del usuario</p></b>
-                <p id="n-cuenta">N° de cuenta: </p>
-                <a href=""><img src="/imagenes/cerrar-sesion-de-usuario.png" alt=""  id="cerrar-sesion" class="img-nav"></a>
+                <p id="n-cuenta">N° de cuenta:</p>
+                <a href="#">
+                    <img src="/imagenes/cerrar-sesion-de-usuario.png" alt="Cerrar sesión" id="cerrar-sesion" class="img-nav">
+                </a>
             </div>
+
         </nav>
     </header>
 </body>

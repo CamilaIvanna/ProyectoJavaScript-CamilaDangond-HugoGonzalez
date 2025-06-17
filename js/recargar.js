@@ -1,3 +1,4 @@
+// Lista de bancos en Colombia, incluyendo entidades tradicionales y digitales
 const listaBancosColombia = [
   "Bancolombia",
   "Banco de Bogotá",
@@ -26,12 +27,13 @@ const listaBancosColombia = [
   "Nu Colombia"
 ];
 
+// Referencia al elemento <select> con id="banco"
 const bancoSelect = document.getElementById("banco");
 
+// Itera sobre la lista de bancos y los agrega como opciones en el select
 listaBancosColombia.forEach(nombreBanco => {
-    const option = document.createElement("option");
-    option.value = nombreBanco;
-    option.textContent = nombreBanco;
-    bancoSelect.appendChild(option);
+  const option = document.createElement("option"); // Crea una nueva opción
+  option.value = nombreBanco;                     // Establece el valor
+  option.textContent = nombreBanco;               // Establece el texto visible
+  bancoSelect.appendChild(option);                // Añade la opción al select
 });
-

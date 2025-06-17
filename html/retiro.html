@@ -1,76 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadatos esenciales -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retira dinero</title>
+
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/comprobantes.css">
+
+    <!-- Fuentes e íconos -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/comprobantes.css">
 </head>
 <body>
+    <!-- Encabezado dinámico -->
     <header id="navbar"></header>
+
+    <!-- Contenido principal -->
     <main class="fondo-secundario">
-        <section class="recuperar-psw container-flex flex-column flex-center" >
-            <div class="contenedor-formularios contenedor-primero" id="contenedor-formulario-verificarDatos">         
+        <section class="recuperar-psw container-flex flex-column flex-center">
+
+            <!-- Formulario de retiro -->
+            <div class="contenedor-formularios contenedor-primero" id="contenedor-formulario-verificarDatos">
                 <div class="container-flex flex-center flex-column inicio-up">
-                        <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                            aria-hidden="true" role="presentation" focusable="false"
-                            style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
+                    <!-- Botón para salir -->
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir </b>
+                        <svg class="icon-svg"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 32 32"
+                             aria-hidden="true"
+                             role="presentation"
+                             focusable="false"
+                             style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
                             <path d="m6 6 20 20M26 6 6 26"></path>
-                            </svg>
-                        </a>     
+                        </svg>
+                    </a>
+
+                    <!-- Logotipo y mensaje -->
                     <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
                     <h1>Sucursal Personas</h1>
                     <h3><b>¿Necesitas dinero?</b></h3>
-                    <p>Vas a retirar dinero de tu cuenta. <b>N°</b><b class="cuenta">30293490330 </b> Ingresa el valor</p>
+                    <p>
+                        Vas a retirar dinero de tu cuenta. <b>N°</b>
+                        <b class="cuenta">30293490330 </b> Ingresa el valor
+                    </p>
                 </div>
+
+                <!-- Formulario de retiro -->
                 <form action="" class="container-flex flex-column flex-center" id="formulario-retirar">
-                  
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/valor.png" alt="" class="icon-input">
-                        <input type="number" name="" id="valor"  required>
+                        <input type="number" name="" id="valor" required>
                         <label for="valor">Valor:</label>
                     </div>
-                    <input type="button" value="Retirar" onclick="retirar()" >
+                    <input type="button" value="Retirar" onclick="retirar()">
                 </form>
             </div>
+
+            <!-- Comprobante de retiro -->
             <div class="contenedor-formularios contenedor-comprobante oculto">
                 <div class="container-flex flex-center flex-column inicio-up">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                    aria-hidden="true" role="presentation" focusable="false"
-                    style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>     
+                    <!-- Botón para salir -->
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir </b>
+                        <svg class="icon-svg"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 32 32"
+                             aria-hidden="true"
+                             role="presentation"
+                             focusable="false"
+                             style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>
+
+                    <!-- Logo y confirmación -->
                     <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
                     <div class="container-flex flex-center">
-                        <h1>Retiro Exitoso </h1>
+                        <h1>Retiro Exitoso</h1>
                         <img src="/imagenes/exito.png" alt="" class="img-exito">
                     </div>
-                    <h3 class="referencias" id="referencia"><b>REF: </b >DRGFERTHG0 </h3>
+                    <h3 class="referencias" id="referencia"><b>REF: </b>DRGFERTHG0</h3>
                 </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
-                        <div class="indicador "><b>Fecha</b></div>
+
+                <!-- Detalles del comprobante -->
+                <div class="container-flex flex-column flex-comprobante">
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador"><b>Fecha</b></div>
                         <div class="rta fecha" id="fecha-hora-comprobante">01/01/01 00:00:00</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
-                        <div class="indicador "><b>N° de cuenta</b></div>
+
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador"><b>N° de cuenta</b></div>
                         <div class="rta cuenta">30293490330</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
-                        <div class="indicador "><b>Tipo de transacción</b></div>
+
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador"><b>Tipo de transacción</b></div>
                         <div class="rta tipo">Retiro</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
-                        <div class="indicador "><b>Descripción del movimiento</b></div>
+
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador"><b>Descripción del movimiento</b></div>
                         <div class="rta descripción">Retiro de dinero</div>
                     </div>
 
@@ -79,11 +114,17 @@
                         <div class="rta valor">$100.000</div>
                     </div>
                 </div>
+
+                <!-- Botón para imprimir comprobante -->
                 <input type="button" value="Imprimir" id="btn-imprimir" onclick="imprimir()">
-            </div>   
+            </div>
         </section>
     </main>
-    <footer id="footer"></footer>  
+
+    <!-- Pie de página dinámico -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
     <script src="/js/script.js"></script>
     <script src="/js/comprobantes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

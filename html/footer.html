@@ -1,27 +1,37 @@
 <!-- AGREGAR FOOTER EN HTML
- <div id="footer"></div> -->
+<div id="footer"></div>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
+
+    <!-- Estilos y fuentes -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/footer.css">
 </head>
 <body>
     <footer>
+
+        <!-- Sección superior del footer -->
         <section class="bg-dark container-flex flex-center">
+            
+            <!-- Información de contacto -->
             <div class="contactenos footer-uno container-flex flex-column">
                 <h3>Contáctanos</h3>
                 <p>Cll 35 #25-37 Antonia Santos Centro</p>
                 <p>Línea gratuita Colombia: +57 315 447 47 89</p>
                 <p>Línea ética: 01 8000 524499</p>
             </div>
+
             <div class="separador-sombra"></div>
+
+            <!-- Enlaces legales -->
             <div class="politicas footer-dos container-flex flex-column">
                 <h3>Legales</h3>
                 <p><a href="">Seguridad</a></p>
@@ -29,25 +39,34 @@
                 <p><a href="">Políticas</a></p>
                 <p><a href="">Reglamento de productos</a></p>
             </div>
+
             <div class="separador-sombra"></div>
+
+            <!-- Redes sociales y entidad de vigilancia -->
             <div class="redes-vigilado footer-tres container-flex flex-column">
+                
                 <div class="redes container-flex flex-sa">
-                    <a href="" class="icon-redes container-flex flex-center"><img src="/imagenes/whatsapp.png" alt=""></a>
-                    <a href="" class="icon-redes container-flex flex-center"><img src="/imagenes/facebook.png" alt=""></a>
-                    <a href="" class="icon-redes container-flex flex-center"><img src="/imagenes/twitter.png" alt=""></a>
-                    <a href="" class="icon-redes container-flex flex-center"><img src="/imagenes/instagram.png" alt=""></a>
+                    <a href="#" class="icon-redes container-flex flex-center"><img src="/imagenes/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="#" class="icon-redes container-flex flex-center"><img src="/imagenes/facebook.png" alt="Facebook"></a>
+                    <a href="#" class="icon-redes container-flex flex-center"><img src="/imagenes/twitter.png" alt="Twitter"></a>
+                    <a href="#" class="icon-redes container-flex flex-center"><img src="/imagenes/instagram.png" alt="Instagram"></a>
                 </div>
+
                 <div>
-                    <img class="img-media" src="/imagenes/vigilado.png" alt="">
+                    <img class="img-media" src="/imagenes/vigilado.png" alt="Entidad de vigilancia">
                 </div>
             </div>
         </section>
-        
+
+        <!-- Sección inferior del footer -->
         <section class="bg-light container-flex flex-column flex-center">
-            <img class="img-media img-footer" src="/imagenes/iconLogo.png" alt="" class="footer-img ">
-            <p>Copyright &COPY; 2025 ACME</p>
-            <p class="desarrolladores">Desarrollado por: Camila Ivanna Dangond Tarazona & Hugo Andrés González Delgado.</p>
+            <img class="img-media img-footer" src="/imagenes/iconLogo.png" alt="Logo ACME">
+            <p>&copy; 2025 ACME</p>
+            <p class="desarrolladores">
+                Desarrollado por: Camila Ivanna Dangond Tarazona & Hugo Andrés González Delgado.
+            </p>
         </section>
+        
     </footer>
 </body>
 </html>

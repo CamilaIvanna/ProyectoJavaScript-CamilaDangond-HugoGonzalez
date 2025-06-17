@@ -1,49 +1,72 @@
-
-/* Estilizacion del footer */
-footer{
-  box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.2); /* sombra más intensa */
+/* === Estilización del Footer === */
+footer {
+  box-shadow: 0 -6px 10px rgba(0, 0, 0, 0.2); /* sombra más intensa en la parte superior */
   position: relative;
   z-index: 10;
 }
-.icon-redes{
-    border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
-    background-color: var(--color-blanco);
+
+/* Íconos de redes sociales circulares */
+.icon-redes {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: var(--color-blanco);
 }
-.icon-redes img{
-    height: 1.3rem;
-    width: 1.3rem;
+
+/* Tamaño del ícono dentro del contenedor circular */
+.icon-redes img {
+  height: 1.3rem;
+  width: 1.3rem;
 }
-.bg-light{
-    background-color: var(--color-clarito);
+
+/* Fondo claro personalizado */
+.bg-light {
+  background-color: var(--color-clarito);
 }
-.bg-dark{
-    background-color: #094d5e;
-    padding: 2rem 0;
+
+/* Fondo oscuro del footer */
+.bg-dark {
+  background-color: #094d5e;
+  padding: 2rem 0;
+  color: var(--color-blanco);
+  gap: 2rem;
 }
-.bg-dark{
-    color: var(--color-blanco);
-    gap: 2rem;
+
+/* Sección de contacto */
+.contactenos {
+  margin-left: 1rem;
 }
-.contactenos{
-    margin-left: 1rem;
+
+/* Separación visual de políticas */
+.politicas {
+  border-right: 1px solid;
+  border-left: 1px solid;
+  padding: 0 2rem;
 }
-.politicas{
-    border-right: 1px solid ;
-    border-left: 1px solid ;
-    padding: 0 2rem;
+
+/* Margen derecho para logos de redes o vigilancia */
+.redes-vigilado {
+  margin-right: 1rem;
 }
-.redes-vigilado{
-    margin-right: 1rem;
+
+/* Separación inferior para grupo de redes sociales */
+.redes {
+  margin-bottom: 2rem;
 }
-.redes{
-    margin-bottom: 2rem;
+
+/* Logo o imagen del footer */
+.footer-img {
+  height: 10rem;
 }
-.footer-img{
-    height: 10rem;
-}
-p, h1, h2, h3, h4, h5, h6{
-    text-align: left;
-    margin: 0.5rem;
+
+/* Estilos generales para textos y títulos */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+  margin: 0.5rem;
 }

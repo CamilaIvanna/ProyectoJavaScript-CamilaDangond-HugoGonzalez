@@ -1,9 +1,13 @@
-// Validación de campos de verificación
+/**
+ * Verifica si los datos ingresados coinciden con un usuario registrado
+ * y, en caso positivo, muestra el formulario para crear una nueva contraseña.
+ */
 function verificar() {
     const tipoId = document.getElementById("tipo-id").value;
     const identificacion = document.getElementById("identificacion").value.trim();
     const email = document.getElementById("email").value.trim().toLowerCase();
 
+    // Validar campos vacíos
     if (!tipoId || !identificacion || !email) {
         Swal.fire({
             icon: 'warning',
@@ -13,14 +17,17 @@ function verificar() {
         return;
     }
 
+    // Obtener usuarios registrados del localStorage
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    // Buscar coincidencia con los datos ingresados
     const usuarioEncontrado = usuarios.find(usuario =>
         usuario.tipoId === tipoId &&
         usuario.identificacion === identificacion &&
         usuario.email.toLowerCase() === email
     );
 
+    // Si no se encuentra el usuario
     if (!usuarioEncontrado) {
         Swal.fire({
             icon: 'error',
@@ -30,16 +37,20 @@ function verificar() {
         return;
     }
 
-    // Si se encuentra, mostrar el formulario para crear nueva clave
+    // Mostrar formulario para crear nueva contraseña
     document.getElementById("contenedor-formulario-verificarDatos").style.display = "none";
     document.getElementById("contenedor-formulario-crearPsw").style.display = "block";
 }
 
-// Validar nueva clave y actualizar
+/**
+ * Valida las nuevas contraseñas y actualiza la contraseña del usuario
+ * en el almacenamiento local si la validación es exitosa.
+ */
 async function crearPsw() {
     const nuevaClave = document.getElementById("psw").value.trim();
     const confirmarClave = document.getElementById("validar-psw").value.trim();
 
+    // Verificar campos vacíos
     if (!nuevaClave || !confirmarClave) {
         Swal.fire({
             icon: 'warning',
@@ -49,6 +60,7 @@ async function crearPsw() {
         return;
     }
 
+    // Validar formato y coincidencia de las contraseñas
     if (!validarClave(nuevaClave, confirmarClave)) {
         return;
     }
@@ -57,14 +69,15 @@ async function crearPsw() {
     const identificacion = document.getElementById("identificacion").value.trim();
     const email = document.getElementById("email").value.trim().toLowerCase();
 
+    // Obtener usuarios y buscar el índice del usuario a modificar
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
     const index = usuarios.findIndex(usuario =>
         usuario.tipoId === tipoId &&
         usuario.identificacion === identificacion &&
         usuario.email.toLowerCase() === email
     );
 
+    // Validar si el usuario aún existe
     if (index === -1) {
         Swal.fire({
             icon: 'error',
@@ -74,14 +87,15 @@ async function crearPsw() {
         return;
     }
 
+    // Hashear nueva contraseña y actualizar en el usuario
     const hash = await hashPassword(nuevaClave);
     usuarios[index].clave = hash;
-
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
+    // Notificar éxito y redirigir
     Swal.fire({
         icon: 'success',
-        title: '¡Contraseña actualizada!',
+        title: 'Contraseña actualizada',
         text: 'Ahora puedes iniciar sesión con tu nueva contraseña.',
         confirmButtonText: 'Volver a inicio'
     }).then(() => {
@@ -89,9 +103,18 @@ async function crearPsw() {
     });
 }
 
-// Validador de clave segura
+/**
+ * Valida que la contraseña cumpla con los requisitos de seguridad
+ * y que ambas contraseñas ingresadas coincidan.
+ *
+ * @param {string} clave - Nueva contraseña.
+ * @param {string} confirmarClave - Confirmación de la nueva contraseña.
+ * @returns {boolean} true si la clave es válida, false en caso contrario.
+ */
 function validarClave(clave, confirmarClave) {
+    // Requiere: mínimo 8 caracteres, una mayúscula, una minúscula, un número y un símbolo
     const claveSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
     if (!claveSegura.test(clave)) {
         Swal.fire({
             icon: 'error',
@@ -115,7 +138,12 @@ function validarClave(clave, confirmarClave) {
     return true;
 }
 
-// Función para hashear la contraseña
+/**
+ * Convierte una contraseña en un hash SHA-256 utilizando Web Crypto API.
+ *
+ * @param {string} password - Contraseña a hashear.
+ * @returns {Promise<string>} Hash en formato hexadecimal.
+ */
 async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);

@@ -1,19 +1,28 @@
-.fila-comprobante{
-    grid-template-columns: repeat(2,50%);
+/* Fila del comprobante con dos columnas centradas */
+.fila-comprobante {
+    grid-template-columns: repeat(2, 50%);
     text-align: center;
 }
-.fila-comprobante div{
+
+/* Estilo para las celdas dentro del comprobante */
+.fila-comprobante div {
     border: 1px solid #237583;
     padding: 1rem;
 }
-.img-exito{
+
+/* Imagen de éxito en comprobante */
+.img-exito {
     height: 3rem;
 }
-#btn-imprimir{
+
+/* Botón de impresión con margen superior */
+#btn-imprimir {
     margin-top: 2rem;
 }
+
+/* Control de texto largo en columnas de grillas */
 .container-grid > div {
-  white-space: normal;    
-  word-break: break-word; 
-  overflow-wrap: break-word;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }

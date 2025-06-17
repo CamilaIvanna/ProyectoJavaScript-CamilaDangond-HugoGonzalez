@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Recupera el usuario activo desde el localStorage
   const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
+  // Si existe un usuario activo
   if (usuario) {
-    // Formatea la fecha de creación
+    // Opciones para el formateo de la fecha
     const opciones = {
       weekday: 'long',
       year: 'numeric',
@@ -10,11 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       day: 'numeric'
     };
 
-    const fecha = new Date(usuario.fechaCreacion); // <-- asegúrate que esto sea un objeto Date
+    // Convierte la fecha de creación en objeto Date y formatea
+    const fecha = new Date(usuario.fechaCreacion);
     const fechaFormateada = new Intl.DateTimeFormat('es-CO', opciones).format(fecha);
+    
+    // Capitaliza la primera letra de la fecha formateada
     const capitalizada = fechaFormateada.charAt(0).toUpperCase() + fechaFormateada.slice(1);
 
-    // Construir objeto de campos
+    // Objeto con los campos que se insertarán en el DOM
     const campos = {
       cuenta: usuario.numeroCuenta,
       nombre: `${usuario.nombres.toUpperCase()} ${usuario.apellidos.toUpperCase()}`,
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       saldo: `${usuario.saldo.toLocaleString("es-CO")}`
     };
 
-    // Reemplazar en HTML
+    // Inserta los valores en los elementos HTML que coinciden con las clases
     for (const clase in campos) {
       const elementos = document.querySelectorAll(`.${clase}`);
       elementos.forEach(el => {

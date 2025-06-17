@@ -1,3 +1,4 @@
+// Cargar navbar
 fetch("/html/navbar.html")
   .then(response => response.text())
   .then(data => {
@@ -27,7 +28,7 @@ fetch("/html/navbar.html")
       });
     }
 
-    // Menú lateral
+    // Menú lateral (mostrar u ocultar)
     const boton = document.getElementById("boton-menu");
     const aside = document.getElementById("menu-lateral");
     if (boton && aside) {
@@ -39,7 +40,6 @@ fetch("/html/navbar.html")
     }
   });
 
-
 // Cargar footer
 fetch("/html/footer.html")
   .then(response => response.text())
@@ -47,7 +47,7 @@ fetch("/html/footer.html")
     document.getElementById("footer").innerHTML = data;
   });
 
-// Activación de etiquetas flotantes
+// Activación de etiquetas flotantes para inputs y selects
 document.querySelectorAll('.div-input input, .div-input select').forEach((input) => {
   const label = input.nextElementSibling;
 
@@ -66,6 +66,7 @@ document.querySelectorAll('.div-input input, .div-input select').forEach((input)
   });
 });
 
+// Lógica de inicio de sesión
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   const tipoIdSelect = document.getElementById('tipo-id');
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('psw');
   const loginButton = document.querySelector('.b-ingreso');
 
-  // Función para hashear la contraseña ingresada
+  // Función para hashear la contraseña ingresada (SHA-256)
   async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
   }
 
+  // Evento click en botón de ingreso
   loginButton.addEventListener('click', async (e) => {
     e.preventDefault();
 
@@ -89,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const numeroId = identificacionInput.value.trim();
     const password = passwordInput.value.trim();
 
+    // Validación de campos vacíos
     if (!tipoId || !numeroId || !password) {
       Swal.fire({
         icon: 'warning',
@@ -100,23 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
+    // Genera el hash de la contraseña
     const claveHash = await hashPassword(password);
 
+    // Verifica existencia del usuario con credenciales válidas
     const usuario = usuarios.find(user =>
       user.tipoId === tipoId &&
       user.identificacion === numeroId &&
       user.clave === claveHash
     );
 
+    // Resultado del intento de login
     if (usuario) {
       Swal.fire({
         icon: 'success',
         title: `¡Buen día ${usuario.nombres}!`,
         text: 'Has iniciado sesión correctamente.'
       }).then(() => {
-        // Guardar sesión activa (opcional)
-        localStorage.setItem('usuarioActivo', JSON.stringify(usuario));
-        window.location.href = '/html/dashboard.html';
+        localStorage.setItem('usuarioActivo', JSON.stringify(usuario)); // Guarda sesión
+        window.location.href = '/html/dashboard.html'; // Redirige al panel
       });
     } else {
       Swal.fire({

@@ -28,4 +28,37 @@ nav{
 }
 @media  screen  {
     
+}/* === Estilización de la barra de navegación === */
+header {
+  height: 10vh; /* Altura fija del header */
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-clarito); /* Color de fondo definido por variable */
+  z-index: 50; /* Se asegura de estar por encima de otros elementos */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra inferior suave */
 }
+
+nav {
+  margin: 0 1%;
+  height: 100%;
+}
+
+.img-contenedor {
+  height: 100%;
+}
+
+.img-nav {
+  height: 3rem;
+  object-fit: contain; /* Escala proporcional sin distorsionar */
+}
+
+.flex-interno {
+  gap: 10PX; /* Espacio entre elementos internos con flex */
+}
+
+.sucursal {
+  border-left: 1px solid black;
+  height: 100%;
+  padding-left: 5%; /* Espacio interno a la izquierda del borde */
+}
+

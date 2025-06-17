@@ -4,29 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transacciones</title>
+
+    <!-- Normalización de estilos -->
     <link rel="stylesheet" href="/styles/normalize.css">
+
+    <!-- Estilos generales y específicos -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/transacciones.css">
+
+    <!-- Tipografía -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Barra de navegación -->
     <header id="navbar"></header>
+
+    <!-- Contenido principal -->
     <main>
         <section class="resumen-transacciones">
             <div class="contenedor-tabla">
+
+                <!-- Botón de salir -->
                 <div class="contenedor-cerrar">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                    aria-hidden="true" role="presentation" focusable="false"
-                    style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>   
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir</b>
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                             aria-hidden="true" role="presentation" focusable="false"
+                             style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 6; overflow: visible;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>   
                 </div>
-                <div class="container-flex transacciones flex-column ">
+
+                <!-- Encabezado de la sección de transacciones -->
+                <div class="container-flex transacciones flex-column">
+
+                    <!-- Título -->
                     <div class="item-transacciones titulo-transacciones">
                         <div class="container-flex flex-center">
-                            <img src="/imagenes/iconLogo.png" alt="" class="img5rem ">
+                            <img src="/imagenes/iconLogo.png" alt="" class="img5rem">
                         </div>
                         <h2>Resumen de movimientos</h2>
                         <div>
@@ -34,6 +53,8 @@
                             <p>Los últimos movimientos de su cuenta <b>N°</b><b class="cuenta"></b> son:</p>
                         </div>
                     </div>
+
+                    <!-- Encabezado de columnas -->
                     <div class="item-transacciones container-grid encabezado-transacciones">
                         <div class="fecha"><b>Fecha y hora</b></div>
                         <div class="referencia"><b>Referencia</b></div>
@@ -42,13 +63,19 @@
                         <div class="valor"><b>Valor</b></div>
                     </div>
                 </div>
+
+                <!-- Botón de impresión -->
                 <input type="button" value="Imprimir" onclick="imprimir()">
             </div>
         </section>
     </main>
+
+    <!-- Pie de página -->
     <footer id="footer"></footer>
+
+    <!-- Scripts funcionales -->
     <script src="/js/script.js"></script>
-    <script src="/js/reumen.js"></script>
+    <script src="/js/resumen.js"></script> <!-- Posible error tipográfico en el nombre del archivo -->
     <script src="/js/comprobantes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/retorno.js"></script>

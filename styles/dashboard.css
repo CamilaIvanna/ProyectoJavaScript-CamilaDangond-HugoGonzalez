@@ -1,5 +1,5 @@
-
-aside{
+/* Estilo para el aside (menú lateral) */
+aside {
     background-color: var(--color-profundo);
     padding-right: 2rem;
     max-width: 27.5rem;
@@ -9,128 +9,168 @@ aside{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* display: none; */
 }
+
+/* Ocultar por defecto el menú lateral */
 #menu-lateral {
     display: none !important;
     transition: all 0.3s ease-in-out;
 }
 
+/* Mostrar el menú lateral cuando tenga la clase 'visible' */
 #menu-lateral.visible {
     display: block !important;
 }
-.menu-desplegable li{
+
+/* Estilo de los ítems del menú desplegable */
+.menu-desplegable li {
     height: 4rem;
     width: 100%;
-    justify-content:left;
+    justify-content: left;
+}
 
-}
+/* Enlaces del menú desplegable */
 .menu-desplegable a {
-    color:var(--color-clarito) ;
-  text-align: left;
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
-  border-bottom: 1px solid;
+    color: var(--color-clarito);
+    text-align: left;
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    border-bottom: 1px solid;
 }
-a:hover{
-    font-weight:600;
+
+/* Efecto hover para cualquier enlace */
+a:hover {
+    font-weight: 600;
 }
-ul{
+
+/* Sangría izquierda para listas */
+ul {
     padding-left: 1rem;
 }
-.dashboard-ppal{
+
+/* Layout principal del dashboard */
+.dashboard-ppal {
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 1rem;
 }
-.item-grid1{
+
+/* Ítem que abarca las 3 columnas */
+.item-grid1 {
     grid-column: span 3;
 }
+
+/* Estilo de las tarjetas del dashboard */
 .tarjeta {
-  background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
-  border-radius: 1rem;
-  box-shadow: 0 8px 25px rgba(9, 77, 94, 0.25);
-  padding: 1.5rem;
-  color: var(--color-blanco);
-  height: 204px;
-  width: 324px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  border: 1px solid rgba(250, 250, 250, 0.1);
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(9, 77, 94, 0.25);
+    padding: 1.5rem;
+    color: var(--color-blanco);
+    height: 204px;
+    width: 324px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid rgba(250, 250, 250, 0.1);
+    position: relative;
+    overflow: hidden;
 }
-.tarjeta img{
+
+/* Imagen dentro de tarjeta */
+.tarjeta img {
     height: 3rem;
 }
-.tarjeta div p,h3{
+
+/* Altura mínima para h3 y p dentro de tarjeta */
+.tarjeta div p, h3 {
     height: 1rem;
 }
+
+/* Efecto visual al pasar el cursor sobre la tarjeta */
 .tarjeta::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(250, 234, 208, 0.2) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  border-radius: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.tarjeta:hover::before {
-  opacity: 1;
-  animation: shimmer 2s ease-in-out;
-}
-
-@keyframes shimmer {
-  0% {
+    content: "";
+    position: absolute;
+    top: 0;
     left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(250, 234, 208, 0.2) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
-.item a{
+
+/* Activación del efecto shimmer */
+.tarjeta:hover::before {
+    opacity: 1;
+    animation: shimmer 2s ease-in-out;
+}
+
+/* Definición de animación shimmer */
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Estilo de cada ítem del dashboard */
+.item a {
     height: 7rem;
     width: 7rem;
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease;
 }
+
+/* Hover en ítem */
 .item a:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
-.contenedor-dashboard{
+
+/* Contenedor del dashboard */
+.contenedor-dashboard {
     min-width: 30rem;
     max-width: 50%;
     background-color: var(--color-blanco);
     padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    margin:5rem auto; 
+    margin: 5rem auto;
 }
-#dashboard{
+
+/* Estilo del fondo del dashboard */
+#dashboard {
     width: 100%;
     background-image: url(/imagenes/lineas-fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-a img{
+
+/* Imagen dentro de enlace */
+a img {
     height: 3rem;
 }
-a p{
+
+/* Párrafo centrado dentro de enlaces */
+a p {
     text-align: center;
 }
-.tarjeta div h3, .tarjeta div p, .tarjeta p{
+
+/* Textos dentro de tarjeta alineados a la izquierda */
+.tarjeta div h3,
+.tarjeta div p,
+.tarjeta p {
     text-align: left;
 }

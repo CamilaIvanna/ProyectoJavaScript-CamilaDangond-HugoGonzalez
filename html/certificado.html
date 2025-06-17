@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tus certificados</title>
+
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/transacciones.css">
@@ -12,25 +14,32 @@
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Navegación principal -->
     <header id="navbar"></header>
+
     <main>
         <section class="certificados">
             <div class="contenedor-tabla">
+                
+                <!-- Botón para salir -->
                 <div class="contenedor-cerrar">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                    aria-hidden="true" role="presentation" focusable="false"
-                    style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>   
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir </b>
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                            aria-hidden="true" role="presentation" focusable="false"
+                            style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 6;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>   
                 </div>
-                <div class="container-flex transacciones flex-column ">
+
+                <!-- Contenido del certificado -->
+                <div class="container-flex transacciones flex-column">
                     <div class="item-transacciones titulo-transacciones">
-                        <div class="img-sup-certificado">
-                        </div>
+                        <div class="img-sup-certificado"></div>
                         <div>
                             <p><h1 class="c-t">Certificación</h1></p>
-                            <p><h6 class="c-t-2">Bancaria</h2></p>
+                            <p><h6 class="c-t-2">Bancaria</h6></p>
                         </div>
                         <div>
                             <br>
@@ -46,27 +55,34 @@
                             </p>
                         </div>
                     </div>
+
                     <div class="separador"></div>
+
+                    <!-- Tabla de productos -->
                     <div class="contenedor-producto">
-                            <div class="item-transacciones container-grid encabezado-transacciones">
+                        <div class="item-transacciones container-grid encabezado-transacciones">
                             <div class="producto"><b>Producto</b></div>
                             <div class="num-cuenta"><b>No. Producto</b></div>
                             <div class="fecha-apertura"><b>Fecha de apertura</b></div>
                             <div class="descripcion"><b>Estado</b></div>
                         </div>
-                        <div class="item-transacciones container-grid fila-transacciones ">
+                        <div class="item-transacciones container-grid fila-transacciones">
                             <div class="cta-ahorro">Cuenta de Ahorro</div>
                             <div class="cuenta"></div>
                             <div class="fechaCreacion"></div>
                             <div class="estado">Activa</div>
                         </div>
                     </div>
+
+                    <!-- Información final y firmas -->
                     <div class="contendor-final-certificado">
-                        <p class="">
+                        <p>
                             <small>*Importante: Esta constancia sólo hace referencia a los productos mencionados anteriormente.</small>
                             <br><br>
                             *Si desea verificar la veracidad de esta información, puede comunicarse con la Sucursal Telefónica Bancolombia a los siguientes números: +57 315 447 47 89, +57 313 359 30 73.
                         </p>
+
+                        <!-- Firmas -->
                         <div class="firmas container-flex flex-sa">
                             <div class="firma">
                                 <img src="/imagenes/FirmaCamilaDangond.png" alt="">
@@ -85,18 +101,26 @@
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Imágenes pie del certificado -->
                         <div class="container-flex flex-center flex-sa footer-certificado">
                             <img src="/imagenes/iconLogo.png" alt="">
                             <img src="/imagenes/vigilado-negro-png.png" alt="">
                         </div>
-
                     </div>
                 </div>
+
+                <!-- Botón de impresión -->
                 <input type="button" value="Imprimir" onclick="imprimir()">
+
             </div>
         </section>
     </main>
+
+    <!-- Pie de página -->
     <footer id="footer"></footer>
+
+    <!-- Scripts necesarios -->
     <script src="/js/script.js"></script>
     <script src="/js/comprobantes.js"></script>
     <script src="/js/dashboard.js"></script>

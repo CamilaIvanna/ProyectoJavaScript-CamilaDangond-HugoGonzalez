@@ -1,188 +1,244 @@
-/* Se hace la estilización de los estilos principales */
-html, body{
+/* ================================
+   Estilos base y estructura global
+   ================================ */
+
+/* Estilización principal del HTML y Body */
+html, body {
     height: auto;
     min-height: 100vh;
     font-family: 'Montserrat';
     overflow-x: hidden;
     margin: 0;
 }
-main{
+
+/* Estilos generales para el contenedor principal */
+main {
     margin-top: 10vh;
     background-color: var(--color-blanco);
 }
-    .formulario-logo {
-      height: 10rem;
+
+/* Logo en formularios */
+.formulario-logo {
+    height: 10rem;
 }
-.body-inicio{
+
+/* Fondo específico para el body en la página de inicio */
+.body-inicio {
     background-image: url(/imagenes/fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-.fondo-secundario{
+
+/* Fondo secundario con líneas */
+.fondo-secundario {
     width: 100%;
     background-image: url(/imagenes/lineas-fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* =========================
+   Variables de color globales
+   ========================= */
 :root {
-  --color-principal:    #237583;
-  --color-secundario:   #64a9ab;
-  --color-terciario:    #3a8797;
-  --color-profundo:     #094d5e;
-  --color-clarito:      #faead0;
-  --color-blanco:       #fafafa;
+    --color-principal:    #237583;
+    --color-secundario:   #64a9ab;
+    --color-terciario:    #3a8797;
+    --color-profundo:     #094d5e;
+    --color-clarito:      #faead0;
+    --color-blanco:       #fafafa;
 }
+
+/* ====================
+   Tipografía y enlaces
+   ==================== */
+
+/* Enlaces sin decoración y centrados */
 a {
-  color: inherit;
-  text-decoration: none;
-  text-align: center;  
+    color: inherit;
+    text-decoration: none;
+    text-align: center;  
 }
-p, h1, h2, h3, h4, h5, h6{
+
+/* Encabezados y párrafos centrados */
+p, h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin: 0.5rem;
 }
-.contenedor-formularios div h1,div h3,div p{
-  text-align: center ;
+
+/* Alineación de contenido de formularios */
+.contenedor-formularios div h1,
+div h3,
+div p {
+    text-align: center;
 }
-.container-flex{
+
+/* =====================
+   Utilidades de Flexbox
+   ===================== */
+
+.container-flex {
     display: flex;
 }
-.flex-center{
+.flex-center {
     justify-content: center;
     align-items: center;
 }
-.flex-left{
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
+.flex-left {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
 }
-.flex-center-vertical{
+.flex-center-vertical {
     align-items: center;
 }
-.flex-column{
+.flex-column {
     flex-direction: column;
 }
-.flex-sb{
+.flex-sb {
     justify-content: space-between;
 }
-.flex-sa{
+.flex-sa {
     justify-content: space-evenly;
 }
 
-/* Reset básico para inputs y selects */
-input, select,button {
-  all: unset;
-  box-sizing: border-box;
+/* ======================================
+   Reseteo de estilos para inputs y botón
+   ====================================== */
+
+input, select, button {
+    all: unset;
+    box-sizing: border-box;
 }
-button{
-  cursor: pointer;
+button {
+    cursor: pointer;
 }
 
-/* Estilos base del contenedor de inputs */
+/* ===============================
+   Estilos para inputs y formularios
+   =============================== */
+
+/* Contenedor base de los campos de entrada */
 .div-input {
-  position: relative;
-  width: 100%;
-  margin-bottom: 1.5rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
-/* Inputs y selects dentro de div-input */
+/* Inputs y selects */
 .div-input input,
 .div-input select {
-  width: 100%;
-  padding: 1.2rem 0.5rem 0.5rem;
-  border-bottom: 2px solid var(--color-principal);
-  background-color: white;
-  font-size: 1rem;
-  border-radius: 5px 5px 0 0;
+    width: 100%;
+    padding: 1.2rem 0.5rem 0.5rem;
+    border-bottom: 2px solid var(--color-principal);
+    background-color: white;
+    font-size: 1rem;
+    border-radius: 5px 5px 0 0;
 }
 
-/* Cuando hay ícono: ajustamos el padding */
+/* Padding extra si hay ícono */
 .div-input.with-icon input,
 .div-input.with-icon select {
-  padding-left: 2.5rem;
+    padding-left: 2.5rem;
 }
 
-/* Ícono en el input */
+/* Ícono dentro del input */
 .icon-input {
-  position: absolute;
-  left: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  opacity: 0.7;
+    position: absolute;
+    left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.7;
 }
 
-/* Label sobre el input */
+/* Estilos para el label */
 .div-input label {
-  position: absolute;
-  top: 1rem;
-  left: 0.5rem;
-  color: #666;
-  font-size: 1rem;
-  pointer-events: none;
-  transition: all 0.2s ease-in-out;
-  background-color: white;
-  padding: 0 0.25rem;
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    color: #666;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    padding: 0 0.25rem;
 }
 
-/* Ajustamos el label si hay ícono */
+/* Ajuste de posición del label con ícono */
 .div-input.with-icon label {
-  left: 2.5rem;
+    left: 2.5rem;
 }
 
-/* Label se eleva si el input tiene contenido o está enfocado */
+/* Efecto al escribir o enfocar el campo */
 .div-input label.active {
-  top: -0.6rem;
-  left: 0.4rem;
-  font-size: 0.75rem;
-  color: var(--color-principal);
+    top: -0.6rem;
+    left: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--color-principal);
 }
 
+/* Botones principales */
 input[type="button"], .iniciar {
-  background-color: var(--color-profundo);
-  color: var(--color-blanco);
-  width: 100%;
-  height: 3rem;
-  border-radius: 30px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
+    background-color: var(--color-profundo);
+    color: var(--color-blanco);
+    width: 100%;
+    height: 3rem;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 input[type="button"]:hover {
-  background-color: #073b49; 
+    background-color: #073b49;
 }
-.div-input.with-icon .icon-input{
+
+/* Ícono ajustado en inputs con íconos */
+.div-input.with-icon .icon-input {
     left: 0.1rem;
 }
 
-/* Se realiza la estilizacion de los ocntenedores de formularios y sus imagenes */
-.contenedor-formularios{
+/* =====================================
+   Contenedores de formularios y estilos
+   ===================================== */
+
+.contenedor-formularios {
     background-color: var(--color-blanco);
     padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     width: 40%;
-    margin:2.5rem auto; 
+    margin: 2.5rem auto;
 }
-.formulario-logo{
+
+.formulario-logo {
     height: 20vh;
 }
-.inicio-up{
+
+.inicio-up {
     margin-bottom: 1.5rem;
 }
-.container-grid{
-  display: grid;
-}
-.grid-center{
-  place-items: center; /* equivale a justify-items + align-items */
-}
-/* Boton de cerrar */
 
-.cerrar{
+/* =====================
+   Utilidades de Grid
+   ===================== */
+
+.container-grid {
+    display: grid;
+}
+.grid-center {
+    place-items: center;
+}
+
+/* ======================
+   Botón de cerrar sesión
+   ====================== */
+
+.cerrar {
     cursor: pointer;
     width: 5rem;
     height: 2rem;
@@ -192,158 +248,194 @@ input[type="button"]:hover {
     margin-left: auto;
     color: var(--color-blanco);
     padding-left: 5px;
-    box-shadow:0 6px 10px rgba(0, 0, 0, 0.3); ;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
+
 .cerrar:hover {
     transform: scale(1.05);
     box-shadow: 8px 8px 16px rgba(9, 77, 94, 0.7);
 }
 
-li{
-  list-style: none;
+/* ====================
+   Otros estilos comunes
+   ==================== */
+
+li {
+    list-style: none;
 }
 .oculto {
-  display: none;
+    display: none;
 }
-.img5rem{
-  height: 5rem;
+.img5rem {
+    height: 5rem;
 }
 .filtro div {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
-.icon-svg{
-  color: var(--color-blanco);
+.icon-svg {
+    color: var(--color-blanco);
 }
-.contenedor-cerrar{
-  margin-bottom: 2rem;
+.contenedor-cerrar {
+    margin-bottom: 2rem;
 }
-/* Estilos base (Escritorio) */
+
+/* =====================
+   Responsividad (Media Queries)
+   ===================== */
+
+/* Escritorio base */
 body {
     font-size: 18px;
 }
 
-/* Tablet (entre 600px y 1023px) */
+/* Tablet */
 @media screen and (max-width: 1023px) {
     body {
         font-size: 17px;
     }
-    .sucursal{
-      display: none;
-    }
-    #n-cuenta{
-      display: none;
-    }
-    .bg-dark{
-      flex-direction: column;
-    }
-    .politicas{
-      border: none !important;
-    }
-    .separador-sombra {
-      width: 100%;
-      height: 20px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
-      margin: 1rem 0;
-    }
-    .img-media{
-      height: 3rem;
-    }
-     .formulario-unete {
-    display: flex;
-    flex-direction: column;
-} 
-    
 
+    .sucursal,
+    #n-cuenta {
+        display: none;
+    }
+
+    .bg-dark {
+        flex-direction: column;
+    }
+
+    .politicas {
+        border: none !important;
+    }
+
+    .separador-sombra {
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent);
+        margin: 1rem 0;
+    }
+
+    .img-media {
+        height: 3rem;
+    }
+
+    .formulario-unete {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-/* Móvil (menos de 600px) */
+/* Móviles */
 @media screen and (max-width: 599px) {
     body {
         font-size: 16px;
     }
-    #nombre-navbar{
-      display: none;
-    }
-    .tarjeta{
-      height: 324px;
-      width: 204px;
-      grid-column: span 2;
-      grid-template-columns: 1fr;
-    }
-  .dashboard-ppal {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-.item {
-  width: 100%;
-  box-sizing: border-box;
-  place-items: center;
-}
 
-.item a {
-  width: 9rem;
-  height: 9rem;
-  padding: 1rem;
-  box-sizing: border-box;
-}
+    #nombre-navbar {
+        display: none;
+    }
 
-  .item-grid1 {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-  }
-  .contenedor-dashboard{
-    min-width: 20rem;
-    max-width: 50%;
-    padding: 1rem;
-  }
-  .desarrolladores{
-    text-align: center;
-  }
-  .contenedor-tabla{
-    min-width: 20rem;
-    padding: 1rem;
-  }
-  .cerrar b{
-    font-size: 12px;
-  }
-  .cerrar{
-    width: 3.5rem;
-    height: 1.5rem;
-  }
-    .contendor-final-certificado div img, .contendor-final-certificado img {
+    .tarjeta {
+        height: 324px;
+        width: 204px;
+        grid-column: span 2;
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-ppal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .item {
+        width: 100%;
+        box-sizing: border-box;
+        place-items: center;
+    }
+
+    .item a {
+        width: 9rem;
+        height: 9rem;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .item-grid1 {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contenedor-dashboard {
+        min-width: 20rem;
+        max-width: 50%;
+        padding: 1rem;
+    }
+
+    .desarrolladores {
+        text-align: center;
+    }
+
+    .contenedor-tabla {
+        min-width: 20rem;
+        padding: 1rem;
+    }
+
+    .cerrar b {
+        font-size: 12px;
+    }
+
+    .cerrar {
+        width: 3.5rem;
+        height: 1.5rem;
+    }
+
+    .contendor-final-certificado div img,
+    .contendor-final-certificado img {
         height: 2rem;
     }
-    .c-t,.c-t-2{
-      font-size: 2rem;
-    }
-    .formulario-logo {
-      height: 5rem;
-}
- .formulario-unete {
-    display: flex;
-    flex-direction: column;
-} 
-section.registro .contenedor-formularios {
-    width: 69%;
-    padding: 1.5rem;
-}}
 
+    .c-t,
+    .c-t-2 {
+        font-size: 2rem;
+    }
+
+    .formulario-logo {
+        height: 5rem;
+    }
+
+    .formulario-unete {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.registro .contenedor-formularios {
+        width: 69%;
+        padding: 1.5rem;
+    }
+}
+
+/* =====================
+   Estilos adicionales
+   ===================== */
 
 .bg-light {
-  background-color: #f8e9d2; /* Color claro */
-  padding: 2rem 1rem;
-  text-align: center;
-
-  /* Eleva visualmente */
-  margin-top: -1rem;
-
-  /* Sombra visible sobre el fondo oscuro */
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #f8e9d2;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: -1rem;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
 }
-.img-footer{
-  height: 5rem; }
 
-.iniciar{
-  background-color: #64a9ab;
+.img-footer {
+    height: 5rem;
+}
+
+/* Color especial para botón iniciar */
+.iniciar {
+    background-color: #64a9ab;
+}
+
+/* Enlaces con efecto hover */
+a:hover {
+    font-weight: 600;
 }

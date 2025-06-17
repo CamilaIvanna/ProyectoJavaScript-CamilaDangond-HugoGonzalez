@@ -1,39 +1,48 @@
-.item-transacciones{
-    grid-template-columns: repeat(5,20%);
-}
-.transacciones{
-    margin: 0 auto;
-}
-.contenedor-tabla{
-    min-width: 30rem;
-    max-width: 70%;
-    background-color: var(--color-blanco);
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    margin: 0 auto;
-}
-.resumen-transacciones, .extractos, .certificados{
-    width: 100%;
-    background-image: url(/imagenes/lineas-fondo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 5rem 0;
-}
-.transacciones h2{
-    text-align: center;
-}
-.transacciones{
-    margin-bottom: 2rem;
-}
-.fila-transacciones div, .encabezado-transacciones div, .titulo-transacciones {
-    border: 1px solid #094d5e47;
-    padding: 1rem;
+/* === Estructura de tabla de transacciones === */
+.item-transacciones {
+  grid-template-columns: repeat(5, 20%);
 }
 
+.transacciones {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.contenedor-tabla {
+  min-width: 30rem;
+  max-width: 70%;
+  background-color: var(--color-blanco);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+}
+
+.resumen-transacciones,
+.extractos,
+.certificados {
+  width: 100%;
+  background-image: url(/imagenes/lineas-fondo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem 0;
+}
+
+.transacciones h2 {
+  text-align: center;
+}
+
+.fila-transacciones div,
+.encabezado-transacciones div,
+.titulo-transacciones {
+  border: 1px solid #094d5e47;
+  padding: 1rem;
+}
+
+/* Asegura que los contenidos largos no rompan el diseño */
 .container-grid > div {
-  white-space: normal;    
-  word-break: break-word; 
+  white-space: normal;
+  word-break: break-word;
   overflow-wrap: break-word;
 }

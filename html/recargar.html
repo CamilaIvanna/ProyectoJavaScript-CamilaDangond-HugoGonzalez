@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recarga tu cuenta</title>
+
+    <!-- Estilos globales y específicos -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/comprobantes.css">
@@ -11,98 +13,146 @@
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
 <body>
+
+    <!-- Barra de navegación cargada dinámicamente -->
     <header id="navbar"></header>
+
     <main class="fondo-secundario">
-        <section class="recuperar-psw container-flex flex-column flex-center" >
-            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+        <section class="recuperar-psw container-flex flex-column flex-center">
+
+            <!-- Formulario de recarga -->
+            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">
                 <div class="container-flex flex-center flex-column inicio-up">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                        aria-hidden="true" role="presentation" focusable="false"
-                        style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>   
+
+                    <!-- Botón para salir -->
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir</b>
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                            aria-hidden="true" role="presentation" focusable="false"
+                            style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 6; overflow: visible;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>
+
+                    <!-- Encabezado -->
                     <h1>Sucursal Personas</h1>
                     <h3><b>¡Recarga tu cuenta!</b></h3>
                     <p>Ingresa los datos para recargar tu cuenta. <b>N°</b><b class="cuenta">30293490330</b></p>
                 </div>
+
+                <!-- Campos del formulario -->
                 <form action="" class="container-flex flex-column flex-center" id="formulario-recargar">
+                    <!-- Banco -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/banco.png" alt="" class="icon-input">
                         <select id="banco" name="banco" required>
                             <option value=""></option>
                         </select>
                         <label for="banco">Desde el banco:</label>
-                    </div>                  
+                    </div>
+
+                    <!-- Valor -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/valor.png" alt="" class="icon-input">
-                        <input type="number" name="" id="valor"  required>
+                        <input type="number" id="valor" required>
                         <label for="valor">Valor:</label>
                     </div>
+
+                    <!-- Usuario -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/user.png" alt="" class="icon-input">
-                        <input type="text" name="" id="usuario"  required>
+                        <input type="text" id="usuario" required>
                         <label for="usuario">Usuario del banco:</label>
-                    </div> 
-                <div class="container-flex flex-center div-input with-icon">
-                    <img src="/imagenes/clave.png" alt="" class="icon-input">
-                    <input type="password" name="" id="psw" required>
-                    <label for="psw">Clave del banco:</label>
-                </div> 
+                    </div>
+
+                    <!-- Clave -->
+                    <div class="container-flex flex-center div-input with-icon">
+                        <img src="/imagenes/clave.png" alt="" class="icon-input">
+                        <input type="password" id="psw" required>
+                        <label for="psw">Clave del banco:</label>
+                    </div>
+
+                    <!-- Botón recargar -->
                     <input type="button" value="Recargar" onclick="recargar()">
                 </form>
             </div>
-      <div class="contenedor-formularios contenedor-comprobante oculto">
+
+            <!-- Comprobante oculto, se muestra después de recargar -->
+            <div class="contenedor-formularios contenedor-comprobante oculto">
                 <div class="container-flex flex-center flex-column inicio-up">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                        aria-hidden="true" role="presentation" focusable="false"
-                        style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>   
+
+                    <!-- Salida -->
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir</b>
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                            aria-hidden="true" role="presentation" focusable="false"
+                            style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 6; overflow: visible;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>
+
+                    <!-- Éxito -->
                     <div class="container-flex flex-center">
-                        <h1>Recarga Exitosa </h1>
+                        <h1>Recarga Exitosa</h1>
                         <img src="/imagenes/exito.png" alt="" class="img-exito">
                     </div>
-                    <h3 class="referencias" id="referencia"><b>REF: </b >DRGFERTHG0 </h3>
+
+                    <!-- Referencia -->
+                    <h3 class="referencias" id="referencia"><b>REF: </b>DRGFERTHG0</h3>
                 </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
+
+                <!-- Detalles del comprobante -->
+                <div class="container-flex flex-column flex-comprobante">
+
+                    <!-- Fecha -->
+                    <div class="container-grid fila-comprobante">
                         <div class="indicador container-flex flex-center"><b>Fecha</b></div>
                         <div class="rta fecha container-flex flex-center" id="fecha-hora-comprobante">01/01/01 00:00:00</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
+
+                    <!-- Cuenta -->
+                    <div class="container-grid fila-comprobante">
                         <div class="indicador container-flex flex-center"><b>N° de cuenta recargada</b></div>
                         <div class="rta cuenta container-flex flex-center">30293490330</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
+
+                    <!-- Tipo -->
+                    <div class="container-grid fila-comprobante">
                         <div class="indicador container-flex flex-center"><b>Tipo de transacción</b></div>
                         <div class="rta tipo container-flex flex-center">Consignación</div>
                     </div>
-                    <div class="container-flex flex-column flex-comprobante">
-                        <div class="container-grid fila-comprobante">
-                        <div class="indicador container-flex flex-center "><b>Descripción del movimiento</b></div>
-                        <div class="rta descripción container-flex flex-center"><p class="baco-user">Recarga por canal electrónico desde banco - usuario</p></div>
+
+                    <!-- Descripción -->
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center"><b>Descripción del movimiento</b></div>
+                        <div class="rta descripción container-flex flex-center">
+                            <p class="baco-user">Recarga por canal electrónico desde banco - usuario</p>
+                        </div>
                     </div>
 
+                    <!-- Valor -->
                     <div class="container-grid fila-comprobante">
                         <div class="indicador container-flex flex-center"><b>Valor de la recarga</b></div>
                         <div class="rta valor container-flex flex-center">$100.000</div>
                     </div>
                 </div>
+
+                <!-- Botón imprimir -->
                 <input type="button" value="Imprimir" id="btn-imprimir" onclick="imprimir()">
-            </div>   
+            </div>
+
         </section>
     </main>
-    <footer id="footer"></footer>  
+
+    <!-- Pie de página cargado dinámicamente -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
     <script src="/js/script.js"></script>
     <script src="/js/recargar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/comprobantes.js"></script>
     <script src="/js/retorno.js"></script>
     <script src="/js/certificado.js"></script>
-
 </body>
 </html>

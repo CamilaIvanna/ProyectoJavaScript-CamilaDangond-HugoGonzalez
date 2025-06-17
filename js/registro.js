@@ -1,70 +1,70 @@
+// Objeto que contiene los departamentos de Colombia con sus respectivas ciudades
 const dataColombia = {
-  "Amazonas": ["Leticia", "Puerto Nariño"],
-  "Antioquia": ["Medellín", "Bello", "Envigado", "Itagüí", "Rionegro", "Apartadó", "Turbo"],
-  "Arauca": ["Arauca", "Arauquita", "Saravena"],
-  "Atlántico": ["Barranquilla", "Soledad", "Malambo", "Galapa", "Sabanalarga"],
-  "Bolívar": ["Cartagena", "Magangué", "Turbaco", "Arjona", "El Carmen de Bolívar"],
-  "Boyacá": ["Tunja", "Duitama", "Sogamoso", "Chiquinquirá", "Paipa"],
-  "Caldas": ["Manizales", "La Dorada", "Chinchiná", "Villamaría"],
-  "Caquetá": ["Florencia", "San Vicente del Caguán", "Puerto Rico"],
-  "Casanare": ["Yopal", "Aguazul", "Villanueva", "Monterrey"],
-  "Cauca": ["Popayán", "Santander de Quilichao", "Puerto Tejada"],
-  "Cesar": ["Valledupar", "Aguachica", "Codazzi"],
-  "Chocó": ["Quibdó", "Istmina", "Tadó"],
-  "Córdoba": ["Montería", "Lorica", "Sahagún", "Cereté"],
-  "Cundinamarca": ["Soacha", "Zipaquirá", "Fusagasugá", "Girardot", "Chía"],
-  "Guainía": ["Inírida"],
-  "Guaviare": ["San José del Guaviare"],
-  "Huila": ["Neiva", "Pitalito", "Garzón", "La Plata"],
-  "La Guajira": ["Riohacha", "Maicao", "Uribia"],
-  "Magdalena": ["Santa Marta", "Ciénaga", "Fundación"],
-  "Meta": ["Villavicencio", "Acacías", "Granada"],
-  "Nariño": ["Pasto", "Ipiales", "Tumaco"],
-  "Norte de Santander": ["Cúcuta", "Ocaña", "Pamplona"],
-  "Putumayo": ["Mocoa", "Puerto Asís"],
-  "Quindío": ["Armenia", "Calarcá", "La Tebaida"],
-  "Risaralda": ["Pereira", "Dosquebradas", "Santa Rosa de Cabal"],
-  "San Andrés y Providencia": ["San Andrés", "Providencia"],
-  "Santander": ["Bucaramanga", "Floridablanca", "Giron", "Piedecuesta", "Barrancabermeja"],
-  "Sucre": ["Sincelejo", "Corozal", "Sampués"],
-  "Tolima": ["Ibagué", "Espinal", "Melgar"],
-  "Valle del Cauca": ["Cali", "Palmira", "Buenaventura", "Tuluá", "Cartago"],
-  "Vaupés": ["Mitú"],
-  "Vichada": ["Puerto Carreño"]
+    "Amazonas": ["Leticia", "Puerto Nariño"],
+    "Antioquia": ["Medellín", "Bello", "Envigado", "Itagüí", "Rionegro", "Apartadó", "Turbo"],
+    "Arauca": ["Arauca", "Arauquita", "Saravena"],
+    "Atlántico": ["Barranquilla", "Soledad", "Malambo", "Galapa", "Sabanalarga"],
+    "Bolívar": ["Cartagena", "Magangué", "Turbaco", "Arjona", "El Carmen de Bolívar"],
+    "Boyacá": ["Tunja", "Duitama", "Sogamoso", "Chiquinquirá", "Paipa"],
+    "Caldas": ["Manizales", "La Dorada", "Chinchiná", "Villamaría"],
+    "Caquetá": ["Florencia", "San Vicente del Caguán", "Puerto Rico"],
+    "Casanare": ["Yopal", "Aguazul", "Villanueva", "Monterrey"],
+    "Cauca": ["Popayán", "Santander de Quilichao", "Puerto Tejada"],
+    "Cesar": ["Valledupar", "Aguachica", "Codazzi"],
+    "Chocó": ["Quibdó", "Istmina", "Tadó"],
+    "Córdoba": ["Montería", "Lorica", "Sahagún", "Cereté"],
+    "Cundinamarca": ["Soacha", "Zipaquirá", "Fusagasugá", "Girardot", "Chía"],
+    "Guainía": ["Inírida"],
+    "Guaviare": ["San José del Guaviare"],
+    "Huila": ["Neiva", "Pitalito", "Garzón", "La Plata"],
+    "La Guajira": ["Riohacha", "Maicao", "Uribia"],
+    "Magdalena": ["Santa Marta", "Ciénaga", "Fundación"],
+    "Meta": ["Villavicencio", "Acacías", "Granada"],
+    "Nariño": ["Pasto", "Ipiales", "Tumaco"],
+    "Norte de Santander": ["Cúcuta", "Ocaña", "Pamplona"],
+    "Putumayo": ["Mocoa", "Puerto Asís"],
+    "Quindío": ["Armenia", "Calarcá", "La Tebaida"],
+    "Risaralda": ["Pereira", "Dosquebradas", "Santa Rosa de Cabal"],
+    "San Andrés y Providencia": ["San Andrés", "Providencia"],
+    "Santander": ["Bucaramanga", "Floridablanca", "Giron", "Piedecuesta", "Barrancabermeja"],
+    "Sucre": ["Sincelejo", "Corozal", "Sampués"],
+    "Tolima": ["Ibagué", "Espinal", "Melgar"],
+    "Valle del Cauca": ["Cali", "Palmira", "Buenaventura", "Tuluá", "Cartago"],
+    "Vaupés": ["Mitú"],
+    "Vichada": ["Puerto Carreño"]
 };
 
-
+// Referencias a elementos select del DOM
 const departamentoSelect = document.getElementById("departamento");
 const ciudadSelect = document.getElementById("ciudad");
 
-// Llenar departamentos
+// Cargar opciones de departamentos en el select
 for (const departamento in dataColombia) {
-  const option = document.createElement("option");
-  option.value = departamento;
-  option.textContent = departamento;
-  departamentoSelect.appendChild(option);
+    const option = document.createElement("option");
+    option.value = departamento;
+    option.textContent = departamento;
+    departamentoSelect.appendChild(option);
 }
 
-// Al cambiar el departamento, actualizar las ciudades
+// Evento: Actualiza ciudades según el departamento seleccionado
 departamentoSelect.addEventListener("change", () => {
-  const ciudades = dataColombia[departamentoSelect.value] || [];
+    const ciudades = dataColombia[departamentoSelect.value] || [];
 
-  // Limpiar ciudad
-  ciudadSelect.innerHTML = '<option value=""></option>';
+    ciudadSelect.innerHTML = '<option value=""></option>'; // Limpiar select
 
-  // Agregar ciudades correspondientes
-  ciudades.forEach(ciudad => {
-    const option = document.createElement("option");
-    option.value = ciudad;
-    option.textContent = ciudad;
-    ciudadSelect.appendChild(option);
-  });
+    ciudades.forEach(ciudad => {
+        const option = document.createElement("option");
+        option.value = ciudad;
+        option.textContent = ciudad;
+        ciudadSelect.appendChild(option);
+    });
 });
 
+// Evento que se ejecuta una vez el DOM ha cargado completamente
 document.addEventListener("DOMContentLoaded", function () {
     const registroBtn = document.querySelector(".b-registro");
 
-    // Hashea la contraseña usando SHA-256
+    // Hashea una contraseña utilizando SHA-256
     async function hashPassword(password) {
         const encoder = new TextEncoder();
         const data = encoder.encode(password);
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return hashHex;
     }
 
-    // Genera un número de cuenta único de 10 dígitos
+    // Genera un número de cuenta aleatorio de 10 dígitos no repetido
     function generarNumeroCuenta(usuarios) {
         let cuenta;
         do {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return cuenta.toString();
     }
 
-    // Validaciones comunes
+    // Verifica que todos los campos requeridos estén llenos
     function validarCamposRequeridos(campos) {
         for (const id of campos) {
             const input = document.getElementById(id);
@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
+    // Valida el formato del teléfono (10 dígitos)
     function validarTelefono(telefono) {
         if (!/^\d{10}$/.test(telefono)) {
             Swal.fire({
@@ -114,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
+    // Valida el formato del correo electrónico
     function validarEmail(email) {
         const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!correoValido.test(email)) {
@@ -128,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
+    // Verifica que la clave cumpla criterios de seguridad y coincida con la confirmación
     function validarClave(clave, confirmarClave) {
         const claveSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (!claveSegura.test(clave)) {
@@ -153,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
+    // Evento: Al hacer clic en el botón de registro
     registroBtn.addEventListener("click", async function (event) {
         event.preventDefault();
 
@@ -176,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        //  Validar usuario duplicado
+        // Verifica si ya existe un usuario con la misma cédula
         const yaExiste = usuarios.some(usuario => usuario.identificacion === cedula);
         if (yaExiste) {
             Swal.fire({
@@ -189,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Crear usuario nuevo
+        // Crear objeto de usuario con la información del formulario
         const numeroCuenta = generarNumeroCuenta(usuarios);
         const fechaCreacion = new Date().toISOString();
         const claveHash = await hashPassword(clave);
@@ -208,12 +212,14 @@ document.addEventListener("DOMContentLoaded", function () {
             clave: claveHash,
             numeroCuenta: numeroCuenta,
             fechaCreacion: fechaCreacion,
-            saldo: 0  // 💰 Saldo inicial
+            saldo: 0
         };
 
+        // Guardar usuario en localStorage
         usuarios.push(datosRegistro);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
+        // Mostrar confirmación de registro
         Swal.fire({
             icon: 'success',
             title: '¡Registro exitoso!',
@@ -229,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showConfirmButton: false
         });
 
-        // 🧹 Limpiar formulario
+        // Limpiar formulario
         document.querySelector("form").reset();
         document.getElementById("tipo-id").selectedIndex = 0;
         document.getElementById("departamento").selectedIndex = 0;

@@ -4,50 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tus consignaciones</title>
+
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
-<body >
+<body>
+    <!-- Barra de navegación -->
     <header id="navbar"></header>
+
     <main class="fondo-secundario">
-        <section class="recuperar-psw container-flex flex-column flex-center" >
-            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">         
+        <section class="recuperar-psw container-flex flex-column flex-center">
+            <div class="contenedor-formularios" id="contenedor-formulario-verificarDatos">
+
+                <!-- Encabezado del formulario -->
                 <div class="container-flex flex-center flex-column inicio-up">
-                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><b>Salir </b><svg class="icon-svg"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                    aria-hidden="true" role="presentation" focusable="false"
-                    style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 3; overflow: visible; stroke-width: 6;">
-                    <path d="m6 6 20 20M26 6 6 26"></path>
-                    </svg></a>     
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center">
+                        <b>Salir </b>
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                            aria-hidden="true" role="presentation" focusable="false"
+                            style="display: block; fill: none; height: 16px; width: 24px; stroke: currentcolor; stroke-width: 6;">
+                            <path d="m6 6 20 20M26 6 6 26"></path>
+                        </svg>
+                    </a>
                     <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
                     <h1>Sucursal Personas</h1>
                     <h3><b>¡Envia dinero!</b></h3>
                     <p>Ingresa los datos para pasar tu cash.</p>
                 </div>
+
+                <!-- Formulario de consignación -->
                 <form action="" class="container-flex flex-column flex-center">
+                    <!-- Campo: Número de cuenta bancaria -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/cuenta.png" alt="" class="icon-input">
                         <input type="number" name="" id="numero-cuenta" max="10" min="8" required>
                         <label for="numero-cuenta">Número de cuenta bancaria:</label>
                     </div>
+
+                    <!-- Campo: Usuario destino -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/user.png" alt="" class="icon-input">
-                        <input type="text" name="" id="usuario"  required>
+                        <input type="text" name="" id="usuario" required>
                         <label for="usuario">Enviar a:</label>
-                    </div>                    
+                    </div>
+
+                    <!-- Campo: Valor a transferir -->
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/valor.png" alt="" class="icon-input">
-                        <input type="number" name="" id="valor"  required>
+                        <input type="number" name="" id="valor" required>
                         <label for="valor">Valor:</label>
                     </div>
+
+                    <!-- Botón de envío -->
                     <input type="button" value="Enviar" onclick="transferir()">
                 </form>
-            </div>   
+            </div>
         </section>
     </main>
+
+    <!-- Pie de página -->
     <footer id="footer"></footer>
+
+    <!-- Scripts -->
     <script src="/js/script.js"></script>
     <script src="/js/retorno.js"></script>
     <script src="/js/certificado.js"></script>

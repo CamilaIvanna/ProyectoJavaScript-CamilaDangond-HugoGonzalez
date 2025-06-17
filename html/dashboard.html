@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu cuenta</title>
+
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/dashboard.css">
@@ -11,8 +13,11 @@
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Barra de navegación -->
     <header id="navbar"></header>
+
     <main class="container-flex">
+        <!-- Menú lateral -->
         <aside id="menu-lateral">
             <ul class="menu-desplegable">
                 <li class="container-flex flex-center"><a href="/html/transacciones.html">Tus movimientos.</a></li>
@@ -23,9 +28,13 @@
                 <li class="container-flex flex-center"><a href="/html/certificado.html">Certificados.</a></li>
             </ul>
         </aside>
+
+        <!-- Sección principal del dashboard -->
         <section id="dashboard">
             <div class="contenedor-dashboard">
-                <div class="dashboard-ppal container-grid grid-center ">
+                <div class="dashboard-ppal container-grid grid-center">
+
+                    <!-- Tarjeta de información principal -->
                     <div class="item-grid1">
                         <div class="tarjeta container-grid flex-center">
                             <div class="container-flex flex-center-vertical">
@@ -44,29 +53,65 @@
                                 <h3>Saldo</h3>
                                 <p id="saldo-cuenta">$000.000</p>
                             </div>
-                            <p id="nombre-usuario">NOMBRE DE USUARIO</p>  
-                            <a href="/html/recargar.html" class="container-flex flex-center-vertical"><img src="/imagenes/recargar.png" alt="">&nbsp Recargar</a>
+                            <p id="nombre-usuario">NOMBRE DE USUARIO</p>
+                            <a href="/html/recargar.html" class="container-flex flex-center-vertical">
+                                <img src="/imagenes/recargar.png" alt="">&nbsp Recargar
+                            </a>
                         </div>
                     </div>
+
+                    <!-- Accesos rápidos -->
                     <div class="item item-grid2">
-                        <a class="container-flex flex-center flex-column" href="/html/transacciones.html"  rel="noopener noreferrer"><img src="/imagenes/movimientos.png" alt=""><p>Resumen de tus movimientos</p></a>
+                        <a class="container-flex flex-center flex-column" href="/html/transacciones.html" rel="noopener noreferrer">
+                            <img src="/imagenes/movimientos.png" alt="">
+                            <p>Resumen de tus movimientos</p>
+                        </a>
                     </div>
+
                     <div class="item item-grid3">
-                        <a class="container-flex flex-center flex-column" href="/html/"  rel="noopener noreferrer"><img src="/imagenes/transferir.png" alt=""> <p>Envia dinero</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/consignaciones.html" rel="noopener noreferrer">
+                            <img src="/imagenes/transferir.png" alt="">
+                            <p>Envia dinero</p>
+                        </a>
+                    </div>
+
                     <div class="item item-grid4">
-                        <a class="container-flex flex-center flex-column" href="/html/retiro.html" rel="noopener noreferrer"><img src="/imagenes/retiro.png" alt=""><p>Retira dinero</p></a></div>
-                    <div class="item item-grid5" >
-                        <a  class="container-flex flex-center flex-column" href="/html/servicios.html" rel="noopener noreferrer"><img src="/imagenes/servicios.png" alt=""><p>Paga tus servicios</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/retiro.html" rel="noopener noreferrer">
+                            <img src="/imagenes/retiro.png" alt="">
+                            <p>Retira dinero</p>
+                        </a>
+                    </div>
+
+                    <div class="item item-grid5">
+                        <a class="container-flex flex-center flex-column" href="/html/servicios.html" rel="noopener noreferrer">
+                            <img src="/imagenes/servicios.png" alt="">
+                            <p>Paga tus servicios</p>
+                        </a>
+                    </div>
+
                     <div class="item item-grid6">
-                        <a class="container-flex flex-center flex-column" href="/html/extracto.html"  rel="noopener noreferrer"><img src="/imagenes/extracto.png" alt=""><p>Tus extractos</p></a></div>
+                        <a class="container-flex flex-center flex-column" href="/html/extracto.html" rel="noopener noreferrer">
+                            <img src="/imagenes/extracto.png" alt="">
+                            <p>Tus extractos</p>
+                        </a>
+                    </div>
+
                     <div class="item item-grid7">
-                        <a class="container-flex flex-center flex-column" id="ir-certificado" href="/html/certificado.html" rel="noopener noreferrer"><img src="/imagenes/certificado.png" alt=""><p>Certificado bancario</p></a></div>
+                        <a class="container-flex flex-center flex-column" id="ir-certificado" href="/html/certificado.html" rel="noopener noreferrer">
+                            <img src="/imagenes/certificado.png" alt="">
+                            <p>Certificado bancario</p>
+                        </a>
+                    </div>
+
                 </div>
             </div>
-
         </section>
     </main>
+
+    <!-- Pie de página -->
     <footer id="footer"></footer>
+
+    <!-- Scripts -->
     <script src="/js/script.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/retorno.js"></script>

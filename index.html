@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACME - Inicio de sesión</title>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/styles/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACME - Inicio de sesión</title>
+
+  <!-- Normalize para reiniciar estilos por defecto -->
+  <link rel="stylesheet" href="styles/normalize.css">
+
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!-- Fuente Montserrat desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Ícono de pestaña -->
+  <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
+
+  <!-- Estilos específicos de esta vista -->
+  <link rel="stylesheet" href="/styles/index.css">
 </head>
+
 <body class="body-inicio">
-    <section class="inicioSesion container-flex flex-column flex-center">
-        <div class="contenedor-formularios">
-            <div class="container-flex flex-center flex-column inicio-up">
-                <img src="imagenes/iconLogo.png" alt="" class="formulario-logo">
-                <h1>Sucursal Personas</h1>
-                <h3><b>¡Hola!</b></h3>
-                <p>Ingresa los datos para acceder a tu cuenta.</p>
-            </div>
-            <form action="" class="container-flex flex-column flex-center">
-                <div class="container-flex flex-center div-input with-icon">
-                    <img src="/imagenes/identificacion.png" alt="" class="icon-input">
-                    <select id="tipo-id" name="opciones" required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="CC">CC</option>
-                        <option value="CE">CE</option>
-                        <option value="NIT">NIT</option>
-                    </select>
-                    <label for="tipo-id">Tipo de identificación:</label>
-                </div>
-                <div class="container-flex flex-center div-input with-icon">
-                    <img src="/imagenes/user.png" alt="" class="icon-input">
-                    <input type="number" name="" id="identificacion" max="10" min="8" required>
-                    <label for="identificación">Número de identificación:</label>
-                </div>
-                <div class="container-flex flex-center div-input with-icon">
-                    <img src="/imagenes/clave.png" alt="" class="icon-input">
-                    <input type="password" name="" id="psw" required>
-                    <label for="psw">Clave:</label>
-                </div>
-                <input type="button" value="Ingresar" class="b-ingreso">
-            </form>
-            <a class="unete container-flex flex-center" href="/html/recuperacionPsw.html"><b>¿Olvidaste tu contraseña?</b></a>
-            <a class="unete container-flex flex-center" href="/html/registro.html"><b>Únete a ACME</b></a>
+
+  <!-- Sección principal de inicio de sesión -->
+  <section class="inicioSesion container-flex flex-column flex-center">
+
+    <!-- Contenedor con logo y texto de bienvenida -->
+    <div class="contenedor-formularios">
+      <div class="container-flex flex-center flex-column inicio-up">
+        <img src="imagenes/iconLogo.png" alt="" class="formulario-logo">
+        <h1>Sucursal Personas</h1>
+        <h3><b>¡Hola!</b></h3>
+        <p>Ingresa los datos para acceder a tu cuenta.</p>
+      </div>
+
+      <!-- Formulario de inicio de sesión -->
+      <form action="" class="container-flex flex-column flex-center">
+
+        <!-- Selector de tipo de identificación -->
+        <div class="container-flex flex-center div-input with-icon">
+          <img src="/imagenes/identificacion.png" alt="" class="icon-input">
+          <select id="tipo-id" name="opciones" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="CC">CC</option>
+            <option value="CE">CE</option>
+            <option value="NIT">NIT</option>
+          </select>
+          <label for="tipo-id">Tipo de identificación:</label>
         </div>
-    </section>
-    <footer id="footer"></footer>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/script.js"></script>
-    <script src="js/retorno.js"></script>
+
+        <!-- Campo de número de identificación -->
+        <div class="container-flex flex-center div-input with-icon">
+          <img src="/imagenes/user.png" alt="" class="icon-input">
+          <input type="number" name="" id="identificacion" max="10" min="8" required>
+          <label for="identificación">Número de identificación:</label>
+        </div>
+
+        <!-- Campo de clave -->
+        <div class="container-flex flex-center div-input with-icon">
+          <img src="/imagenes/clave.png" alt="" class="icon-input">
+          <input type="password" name="" id="psw" required>
+          <label for="psw">Clave:</label>
+        </div>
+
+        <!-- Botón de ingreso -->
+        <input type="button" value="Ingresar" class="b-ingreso">
+      </form>
+
+      <!-- Enlaces para recuperación y registro -->
+      <a class="unete container-flex flex-center" href="/html/recuperacionPsw.html"><b>¿Olvidaste tu contraseña?</b></a>
+      <a class="unete container-flex flex-center" href="/html/registro.html"><b>Únete a ACME</b></a>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer id="footer"></footer>
+
+  <!-- Librería SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Scripts personalizados -->
+  <script src="js/script.js"></script>
+  <script src="js/retorno.js"></script>
 </body>
+
 </html>

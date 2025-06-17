@@ -1,13 +1,17 @@
-.c-t, .c-t-2{
-    font-size:3rem;
+/* Títulos principales */
+.c-t, .c-t-2 {
+    font-size: 3rem;
     margin-left: 0;
     color: var(--color-terciario);
-    font-weight:600;
+    font-weight: 600;
 }
-.c-t-2{
-    font-weight:500;
+
+.c-t-2 {
+    font-weight: 500;
 }
-.img-sup-certificado{
+
+/* Imagen superior del certificado */
+.img-sup-certificado {
     width: 100%;
     height: 5rem;
     background-image: url(/imagenes/img-certificados.png);
@@ -15,65 +19,89 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
-.texto-certificado, .fecha-servicio{
+
+/* Alineación de texto */
+.texto-certificado, .fecha-servicio {
     text-align: left;
 }
-.item-transacciones{
+
+/* Columnas para transacciones */
+.item-transacciones {
     grid-template-columns: repeat(4, 25%);
 }
-.separador{
+
+/* Separador horizontal */
+.separador {
     height: 1rem;
     border: 1px solid #094d5e47;
     border-top: 0;
     border-bottom: 0;
 }
-.titulo-transacciones{
+
+/* Título de transacciones sin borde inferior */
+.titulo-transacciones {
     border-bottom: 0;
 }
-.contenedor-producto{
+
+/* Contenedor de producto */
+.contenedor-producto {
     padding: 1rem;
     border: 1px solid #094d5e47;
     border-top: 0;
     border-bottom: 0;
 }
-.contendor-final-certificado{
+
+/* Contenedor final del certificado */
+.contendor-final-certificado {
     border: 1px solid #094d5e47;
     border-top: 0;
     padding-left: 1rem;
 }
-.contendor-final-certificado p{
+
+.contendor-final-certificado p {
     text-align: left;
 }
-.contendor-final-certificado div img, .contendor-final-certificado img{
+
+.contendor-final-certificado div img,
+.contendor-final-certificado img {
     height: 4rem;
 }
-small{
+
+/* Texto pequeño */
+small {
     color: gray;
 }
+
+/* Estilos para impresión */
 @media print {
-  body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
 
-  .img-sup-certificado {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    background-image: url('/imagenes/img-certificados.png') !important;
-  }
+    .img-sup-certificado {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        background-image: url('/imagenes/img-certificados.png') !important;
+    }
 
-  .contendor-final-certificado img {
-    display: block !important;
-  }
-  .c-t, .c-t-2{
-    text-align: left !important;
-    padding-left: 20px;}
+    .contendor-final-certificado img {
+        display: block !important;
+    }
+
+    .c-t, .c-t-2 {
+        text-align: left !important;
+        padding-left: 20px;
+    }
 }
 
-.firmas , .footer-certificado{
+/* Espaciado inferior para firmas y pie de página */
+.firmas, .footer-certificado {
     margin-bottom: 1.5rem;
 }
+
+/* Estilo para firma específica */
 .firmaHugo {
-  filter: brightness(3); /* 1 es normal. 1.3 es más claro. */
-   opacity: 0.5;
+    filter: brightness(3);
+    opacity: 0.5;
 }

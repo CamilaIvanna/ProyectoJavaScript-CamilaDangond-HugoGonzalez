@@ -1,10 +1,14 @@
+// Evento que se ejecuta cuando el DOM ha sido completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.querySelector('.transacciones');
 
+    // Obtener el usuario activo desde localStorage
     const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
+
+    // Obtener transacciones del usuario, si existen
     const transacciones = usuarioActivo?.transacciones || [];
 
-    // Si no hay transacciones, mostrar alerta y redirigir
+    // Si no hay transacciones, mostrar alerta y redirigir al dashboard
     if (transacciones.length === 0) {
         Swal.fire({
             icon: 'info',
@@ -17,16 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Limpiar filas anteriores
+    // Limpiar filas anteriores en el contenedor de transacciones
     const filasAntiguas = contenedor.querySelectorAll('.fila-transacciones');
     filasAntiguas.forEach(f => f.remove());
 
-    // Ordenar y tomar las últimas 10
+    // Ordenar las transacciones por fecha (más reciente primero) y tomar las últimas 10
     const ultimas10 = transacciones
         .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
         .slice(0, 10);
 
-    // Insertar cada fila
+    // Crear e insertar una fila para cada transacción
     ultimas10.forEach(tx => {
         const fila = document.createElement('div');
         fila.className = 'item-transacciones container-grid fila-transacciones';
@@ -40,10 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.appendChild(fila);
     });
 
-    // Rellenar datos del cliente
+    // Rellenar los datos del cliente en los elementos correspondientes
     document.querySelector('.nombre').textContent = usuarioActivo.nombre || '';
     document.querySelector('.tipoId').textContent = usuarioActivo.tipoId || '';
     document.querySelector('.identificacion').textContent = usuarioActivo.identificacion || '';
     document.querySelector('.cuenta').textContent = usuarioActivo.cuenta || '';
 });
-
