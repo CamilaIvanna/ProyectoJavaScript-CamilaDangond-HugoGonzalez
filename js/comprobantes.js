@@ -34,6 +34,12 @@ function actualizarValorComprobante(contenedorComprobante) {
         const usuario = document.getElementById('usuario')?.value || 'usuario';
         bancoUserP.textContent = `Recarga por canal electrónico desde ${banco} - ${usuario}`;
     }
+    const descripcionElemento = contenedorComprobante.querySelector('.descripción');
+    const servicioSeleccionado = document.getElementById('servicio')?.value;
+
+    if (descripcionElemento && servicioSeleccionado) {
+        descripcionElemento.textContent = `Pago de servicio - ${servicioSeleccionado}`;
+    }
 }
 
 function generarComprobante() {
