@@ -22,51 +22,7 @@ Aplicación desarrollada como
 
 ---
 
-## 📁 Estructura del Proyecto
-```bash
-ProyectoJavaScript-CamilaDangond-HugoGonzalez/
-├── html/
-│   ├── certificado.html
-│   ├── consignaciones.html
-│   ├── dashboard.html
-│   ├── extracto.html
-│   ├── footer.html
-│   ├── navbar.html
-│   ├── recargar.html
-│   ├── recuperacionPsw.html
-│   ├── registro.html
-│   ├── retiro.html
-│   ├── servicios.html
-│   └── transacciones.html
-├── imagenes/
-│   └── logo.png
-├── js/
-│   ├── certificado.js
-│   ├── comprobantes.js
-│   ├── dashboard.js
-│   ├── recargar.js
-│   ├── recuperarPsw.js
-│   ├── registro.js
-│   ├── resumen.js
-│   ├── retorno.js
-│   └── script.js
-├── styles/
-│   ├── certificado.css
-│   ├── comprobantes.css
-│   ├── dashboard.css
-│   ├── footer.css
-│   ├── index.css
-│   ├── navbar.css
-│   ├── normalize.css
-│   ├── recuperarPsw.css
-│   ├── registro.css
-│   ├── style.css
-│   └── transacciones.css
-├── index.html
-└── README.md
 
-
----
 
 ## 🔑 Funcionalidades Principales
 
@@ -117,3 +73,48 @@ ProyectoJavaScript-CamilaDangond-HugoGonzalez/
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez 
+
+## 📁 Estructura del Proyecto
+```bash
+ProyectoJavaScript-CamilaDangond-HugoGonzalez/
+├── html/
+│   ├── certificado.html
+│   ├── consignaciones.html
+│   ├── dashboard.html
+│   ├── extracto.html
+│   ├── footer.html
+│   ├── navbar.html
+│   ├── recargar.html
+│   ├── recuperacionPsw.html
+│   ├── registro.html
+│   ├── retiro.html
+│   ├── servicios.html
+│   └── transacciones.html
+├── imagenes/
+│   └── logo.png
+├── js/
+│   ├── certificado.js
+│   ├── comprobantes.js
+│   ├── dashboard.js
+│   ├── recargar.js
+│   ├── recuperarPsw.js
+│   ├── registro.js
+│   ├── resumen.js
+│   ├── retorno.js
+│   └── script.js
+├── styles/
+│   ├── certificado.css
+│   ├── comprobantes.css
+│   ├── dashboard.css
+│   ├── footer.css
+│   ├── index.css
+│   ├── navbar.css
+│   ├── normalize.css
+│   ├── recuperarPsw.css
+│   ├── registro.css
+│   ├── style.css
+│   └── transacciones.css
+├── index.html
+└── README.md
+
+   
