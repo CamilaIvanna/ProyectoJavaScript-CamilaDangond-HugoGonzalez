@@ -16,6 +16,50 @@ Aplicación desarrollada como solución integral de autogestión para los usuari
 - **Camila Ivanna Dangond**
 
 ---
+## 📂  Estructuración del proyecto
+
+PROYECTO JAVASCRIPT-CAMILADANGOND-HUGOG...
+├── html/
+│   ├── certificado.html
+│   ├── consignaciones.html
+│   ├── dashboard.html
+│   ├── extracto.html
+│   ├── footer.html
+│   ├── navbar.html
+│   ├── recargar.html
+│   ├── recuperacionPsw.html
+│   ├── registro.html
+│   ├── retiro.html
+│   ├── servicios.html
+│   └── transacciones.html
+├── imagenes/
+│   └── (íconos, logos e imágenes usadas en la interfaz)
+├── js/
+│   ├── certificado.js
+│   ├── comprobantes.js
+│   ├── dashboard.js
+│   ├── recargar.js
+│   ├── recuperarPsw.js
+│   ├── registro.js
+│   ├── retorno.js
+│   ├── resumen.js
+│   └── script.js
+├── styles/
+│   ├── certificado.css
+│   ├── comprobantes.css
+│   ├── dashboard.css
+│   ├── footer.css
+│   ├── index.css
+│   ├── navbar.css
+│   ├── normalize.css
+│   ├── recuperarPsw.css
+│   ├── registro.css
+│   ├── style.css
+│   └── transacciones.css
+├── index.html
+└── README.md
+
+---
 
 ## 🧾 Funcionalidades Completadas
 
