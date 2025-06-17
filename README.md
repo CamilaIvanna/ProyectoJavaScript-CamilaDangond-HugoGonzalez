@@ -16,50 +16,30 @@ Aplicación desarrollada como solución integral de autogestión para los usuari
 - **Camila Ivanna Dangond**
 
 ---
-## 📂  Estructuración del proyecto
+### 📂 Estructura del Proyecto  
+**ProyectoJavaScript-CamilaDangond-HugoGonzalez/**  
+├── **html/**  
+│   ├── certificado.html – Certificado bancario  
+│   ├── consignaciones.html – Enviar dinero  
+│   ├── dashboard.html – Panel principal del usuario  
+│   ├── extracto.html – Generar extracto mensual  
+│   ├── footer.html – Pie de página  
+│   ├── navbar.html – Barra de navegación  
+│   ├── recargar.html – Recarga de cuenta  
+│   ├── recuperacionPsw.html – Recuperación de contraseña  
+│   ├── registro.html – Registro de usuario  
+│   ├── retiro.html – Retiro de dinero  
+│   ├── servicios.html – Pago de servicios  
+│   └── transacciones.html – Resumen de movimientos  
+├── **imagenes/** – Íconos, logos e imágenes usadas en la interfaz  
+├── **js/**  
+│   ├── certificado.js – Lógica para generar certificados  
+│   ├── comprobantes.js – Generación de comprobantes  
+│   ├── dashboard.js – Interacciones en el dashboard  
+│   ├── recargar.js – Lógica para recargas  
+│   ├── recuperarPsw.js – Manejo de recuperación de contraseña  
+│   ├── re
 
-PROYECTO JAVASCRIPT-CAMILADANGOND-HUGOG...
-├── html/
-│   ├── certificado.html
-│   ├── consignaciones.html
-│   ├── dashboard.html
-│   ├── extracto.html
-│   ├── footer.html
-│   ├── navbar.html
-│   ├── recargar.html
-│   ├── recuperacionPsw.html
-│   ├── registro.html
-│   ├── retiro.html
-│   ├── servicios.html
-│   └── transacciones.html
-├── imagenes/
-│   └── (íconos, logos e imágenes usadas en la interfaz)
-├── js/
-│   ├── certificado.js
-│   ├── comprobantes.js
-│   ├── dashboard.js
-│   ├── recargar.js
-│   ├── recuperarPsw.js
-│   ├── registro.js
-│   ├── retorno.js
-│   ├── resumen.js
-│   └── script.js
-├── styles/
-│   ├── certificado.css
-│   ├── comprobantes.css
-│   ├── dashboard.css
-│   ├── footer.css
-│   ├── index.css
-│   ├── navbar.css
-│   ├── normalize.css
-│   ├── recuperarPsw.css
-│   ├── registro.css
-│   ├── style.css
-│   └── transacciones.css
-├── index.html
-└── README.md
-
----
 
 ## 🧾 Funcionalidades Completadas
 
