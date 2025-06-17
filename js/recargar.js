@@ -35,6 +35,7 @@ listaBancosColombia.forEach(nombreBanco => {
     bancoSelect.appendChild(option);
 });
 
+<<<<<<< HEAD
     document.addEventListener("DOMContentLoaded", () => {
         const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
         if (usuario) {
