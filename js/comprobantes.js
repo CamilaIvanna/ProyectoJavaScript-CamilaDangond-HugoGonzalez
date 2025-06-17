@@ -222,6 +222,44 @@ function recargar() {
     }
 }
 
+function pagar() {
+    if (validarFormularioGenerico("formulario-pagar")) {
+        const valorIngresado = parseFloat(document.getElementById('valor').value.trim());
+        if (isNaN(valorIngresado) || valorIngresado <= 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Valor inválido',
+                text: 'El valor ingresado debe ser un número mayor a 0'
+            });
+            return;
+        }
+
+        const referencia = generarRef();
+        const { iso, fecha, hora } = obtenerFechaYHora();
+
+        // Intentar actualizar el saldo y registrar la transacción
+        const resultado = actualizarSaldoYTransaccion(valorIngresado, "Pago", "", referencia, iso);
+
+        // Solo si fue exitosa se continúa
+        if (resultado) {
+            const refElemento = document.getElementById('referencia');
+            if (refElemento) {
+                refElemento.innerHTML = `<b>REF:</b> ${referencia}`;
+            }
+
+            const fechaHoraElemento = document.getElementById('fecha-hora-comprobante');
+            if (fechaHoraElemento) {
+                fechaHoraElemento.innerHTML = `${fecha} -- ${hora}`;
+            }
+
+            generarComprobante();
+        }else{
+            document.getElementById('valor').value = "";
+        }
+        // Si no fue exitosa (por ejemplo, saldo insuficiente), no se muestra comprobante
+    }
+}
+
 function imprimir() {
     // Intenta obtener el contenedor principal que se va a imprimir
     const comprobante = document.querySelector('.contenedor-comprobante') || document.querySelector('.contenedor-tabla');
