@@ -1,6 +1,8 @@
 # 🏦 Banco Acme - Aplicación Web de Autogestión Bancaria
 
-![Logo Banco Acme](/imagenes/iconLogo.png)
+<p align="center">
+  <img src="imagenes/iconLogo.png" alt="Logo Banco Acme" width="150">
+</p>
 
 Aplicación desarrollada como solución integral de autogestión para los usuarios del Banco Acme. Permite el registro de usuarios, la gestión de cuentas, realización de transacciones, pagos de servicios, generación de extractos y certificados. Toda la información se persiste en el navegador usando `localStorage` con estructuras JSON.
 
@@ -20,46 +22,48 @@ Aplicación desarrollada como solución integral de autogestión para los usuari
 ---
 
 ## 📁 Estructura del Proyecto
+```bash
 ProyectoJavaScript-CamilaDangond-HugoGonzalez/
 ├── html/
-│ ├── certificado.html
-│ ├── consignaciones.html
-│ ├── dashboard.html
-│ ├── extracto.html
-│ ├── footer.html
-│ ├── navbar.html
-│ ├── recargar.html
-│ ├── recuperacionPsw.html
-│ ├── registro.html
-│ ├── retiro.html
-│ ├── servicios.html
-│ └── transacciones.html
+│   ├── certificado.html
+│   ├── consignaciones.html
+│   ├── dashboard.html
+│   ├── extracto.html
+│   ├── footer.html
+│   ├── navbar.html
+│   ├── recargar.html
+│   ├── recuperacionPsw.html
+│   ├── registro.html
+│   ├── retiro.html
+│   ├── servicios.html
+│   └── transacciones.html
 ├── imagenes/
-│ └── logo.png
+│   └── logo.png
 ├── js/
-│ ├── certificado.js
-│ ├── comprobantes.js
-│ ├── dashboard.js
-│ ├── recargar.js
-│ ├── recuperarPsw.js
-│ ├── registro.js
-│ ├── resumen.js
-│ ├── retorno.js
-│ └── script.js
+│   ├── certificado.js
+│   ├── comprobantes.js
+│   ├── dashboard.js
+│   ├── recargar.js
+│   ├── recuperarPsw.js
+│   ├── registro.js
+│   ├── resumen.js
+│   ├── retorno.js
+│   └── script.js
 ├── styles/
-│ ├── certificado.css
-│ ├── comprobantes.css
-│ ├── dashboard.css
-│ ├── footer.css
-│ ├── index.css
-│ ├── navbar.css
-│ ├── normalize.css
-│ ├── recuperarPsw.css
-│ ├── registro.css
-│ ├── style.css
-│ └── transacciones.css
+│   ├── certificado.css
+│   ├── comprobantes.css
+│   ├── dashboard.css
+│   ├── footer.css
+│   ├── index.css
+│   ├── navbar.css
+│   ├── normalize.css
+│   ├── recuperarPsw.css
+│   ├── registro.css
+│   ├── style.css
+│   └── transacciones.css
 ├── index.html
 └── README.md
+
 
 ---
 
