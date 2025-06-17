@@ -13,7 +13,7 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     margin: 0 auto;
 }
-.resumen-transacciones{
+.resumen-transacciones, .extractos, .certificados{
     width: 100%;
     background-image: url(/imagenes/lineas-fondo.png);
     background-size: cover;
@@ -32,3 +32,8 @@
     padding: 1rem;
 }
 
+.container-grid > div {
+  white-space: normal;    
+  word-break: break-word; 
+  overflow-wrap: break-word;
+}
