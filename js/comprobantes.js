@@ -234,14 +234,17 @@ function pagar() {
             return;
         }
 
-        const referencia = generarRef();
+        // Capturar nombre del servicio desde el input/select (ajusta el id si es necesario)
+        const servicio = document.getElementById('servicio')?.value || 'Servicio no especificado';
+
+        const referencia = generarRef(); // Genera y devuelve la referencia (ya se muestra en #referencia)
         const { iso, fecha, hora } = obtenerFechaYHora();
 
         // Intentar actualizar el saldo y registrar la transacción
-        const resultado = actualizarSaldoYTransaccion(valorIngresado, "Pago", "", referencia, iso);
+        const resultado = actualizarSaldoYTransaccion(valorIngresado, "Pago", servicio, referencia, iso);
 
-        // Solo si fue exitosa se continúa
         if (resultado) {
+            // Actualizar campos del comprobante
             const refElemento = document.getElementById('referencia');
             if (refElemento) {
                 refElemento.innerHTML = `<b>REF:</b> ${referencia}`;
@@ -253,10 +256,12 @@ function pagar() {
             }
 
             generarComprobante();
-        }else{
-            document.getElementById('valor').value = "";
+        } else {
+            // Si no fue exitosa, limpiar campo y dar focus
+            const inputValor = document.getElementById('valor');
+            inputValor.value = "";
+            inputValor.focus();
         }
-        // Si no fue exitosa (por ejemplo, saldo insuficiente), no se muestra comprobante
     }
 }
 
