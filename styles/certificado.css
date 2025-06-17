@@ -1,0 +1,51 @@
+.c-t, .c-t-2{
+    font-size:3rem;
+    margin-left: 0;
+    color: var(--color-terciario);
+    font-weight:600;
+}
+.c-t-2{
+    font-weight:500;
+}
+.img-sup-certificado{
+    width: 100%;
+    height: 7rem;
+    background-image: url(/imagenes/img-certificados.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.texto-certificado, .fecha{
+    text-align: left;
+}
+.item-transacciones{
+    grid-template-columns: repeat(4, 25%);
+}
+.separador{
+    height: 1rem;
+    border: 1px solid #094d5e47;
+    border-top: 0;
+    border-bottom: 0;
+}
+.titulo-transacciones{
+    border-bottom: 0;
+}
+.contenedor-producto{
+    padding: 1rem;
+    border: 1px solid #094d5e47;
+    border-top: 0;
+    border-bottom: 0;
+}
+.contendor-final-certificado{
+    border: 1px solid #094d5e47;
+    border-top: 0;
+}
+.contendor-final-certificado p{
+    text-align: left;
+}
+.contendor-final-certificado img{
+    height: 4rem;
+}
+small{
+    color: gray;
+}
