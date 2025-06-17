@@ -239,7 +239,7 @@ function pagar() {
 
         const referencia = generarRef(); // Genera y devuelve la referencia (ya se muestra en #referencia)
         const { iso, fecha, hora } = obtenerFechaYHora();
-
+        
         // Intentar actualizar el saldo y registrar la transacción
         const resultado = actualizarSaldoYTransaccion(valorIngresado, "Pago", servicio, referencia, iso);
 
