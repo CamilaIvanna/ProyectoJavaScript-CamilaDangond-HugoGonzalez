@@ -22,14 +22,14 @@
                     <h3><b>¿Necesitas dinero?</b></h3>
                     <p>Vas a retirar dinero de tu cuenta. <b>N°</b><b class="cuenta">30293490330 </b> Ingresa el valor</p>
                 </div>
-                <form action="" class="container-flex flex-column flex-center">
+                <form action="" class="container-flex flex-column flex-center" id="formulario-retirar">
                   
                     <div class="container-flex flex-center div-input with-icon">
                         <img src="/imagenes/valor.png" alt="" class="icon-input">
                         <input type="number" name="" id="valor"  required>
                         <label for="valor">Valor:</label>
                     </div>
-                    <input type="button" value="Retirar" onclick="retirar()">
+                    <input type="button" value="Retirar" onclick="retirar()" >
                 </form>
             </div>
             <div class="contenedor-formularios contenedor-comprobante oculto">
@@ -45,7 +45,7 @@
                     <div class="container-flex flex-column flex-comprobante">
                         <div class="container-grid fila-comprobante">
                         <div class="indicador "><b>Fecha</b></div>
-                        <div class="rta fecha">01/01/01 00:00:00</div>
+                        <div class="rta fecha" id="fecha-hora-comprobante">01/01/01 00:00:00</div>
                     </div>
                     <div class="container-flex flex-column flex-comprobante">
                         <div class="container-grid fila-comprobante">
@@ -74,8 +74,9 @@
     </main>
     <footer id="footer"></footer>  
     <script src="/js/script.js"></script>
-    <script src="/js/comprobantes.js"></script>
     <script src="/js/retiro.js"></script>
+    <script src="/js/comprobantes.js"></script>
     <script src="/js/datos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
