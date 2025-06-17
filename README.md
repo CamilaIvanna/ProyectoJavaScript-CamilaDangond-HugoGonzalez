@@ -1,95 +1,115 @@
-# Banco Acme - Aplicación Web de Autogestión Bancaria
+# 🏦 Banco Acme - Aplicación Web de Autogestión Bancaria
 
-Aplicación desarrollada como solución integral de autogestión para los usuarios del Banco Acme. Permite el registro, gestión de cuenta, movimientos financieros, pagos y generación de extractos y certificados. Todo con persistencia de datos en el navegador usando JSON.
+![Logo Banco Acme](/imagenes/iconLogo.png)
 
----
-
-## 🌐 Link del Repositorio
-
-👉 [https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez](https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez)
+Aplicación desarrollada como solución integral de autogestión para los usuarios del Banco Acme. Permite el registro de usuarios, la gestión de cuentas, realización de transacciones, pagos de servicios, generación de extractos y certificados. Toda la información se persiste en el navegador usando `localStorage` con estructuras JSON.
 
 ---
 
-## 👩‍💻 Creadores
+## 🌐 Repositorio
+
+👉 [GitHub: Proyecto JavaScript - Camila Dangond & Hugo González](https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez)
+
+---
+
+## 👨‍💻 Creadores
 
 - **Hugo Andrés González**
 - **Camila Ivanna Dangond**
 
 ---
-### 📂 Estructura del Proyecto  
-**ProyectoJavaScript-CamilaDangond-HugoGonzalez/**  
-├── **html/**  
-│   ├── certificado.html – Certificado bancario  
-│   ├── consignaciones.html – Enviar dinero  
-│   ├── dashboard.html – Panel principal del usuario  
-│   ├── extracto.html – Generar extracto mensual  
-│   ├── footer.html – Pie de página  
-│   ├── navbar.html – Barra de navegación  
-│   ├── recargar.html – Recarga de cuenta  
-│   ├── recuperacionPsw.html – Recuperación de contraseña  
-│   ├── registro.html – Registro de usuario  
-│   ├── retiro.html – Retiro de dinero  
-│   ├── servicios.html – Pago de servicios  
-│   └── transacciones.html – Resumen de movimientos  
-├── **imagenes/** – Íconos, logos e imágenes usadas en la interfaz  
-├── **js/**  
-│   ├── certificado.js – Lógica para generar certificados  
-│   ├── comprobantes.js – Generación de comprobantes  
-│   ├── dashboard.js – Interacciones en el dashboard  
-│   ├── recargar.js – Lógica para recargas  
-│   ├── recuperarPsw.js – Manejo de recuperación de contraseña  
-│   ├── re
 
+## 📁 Estructura del Proyecto
 
-## 🧾 Funcionalidades Completadas
-
-### 🔐 Inicio de Sesión
-- Formulario con tipo y número de identificación + contraseña.
-- Validación de credenciales con mensajes de éxito o error.
-- Enlaces a "Crear cuenta" y "Recuperar contraseña".
-
-### 📝 Registro de Usuario
-- Formulario completo con validación en tiempo real.
-- Generación de número de cuenta y fecha automática.
-- Muestra resumen del registro.
-- Botones de cancelar y redirección al login.
-
-### 🔑 Recuperación de Contraseña
-- Verificación por identificación y correo electrónico.
-- Asignación de nueva contraseña con validación.
-- Botón cancelar para volver al login.
-
-### 🏠 Dashboard Principal
-- Resumen estilizado de cuenta (tarjeta con número de cuenta, saldo y fecha de creación).
-- Menú de navegación con las siguientes opciones:
-  - **Resumen de Transacciones** (últimas 10 transacciones + opción de imprimir).
-  - **Consignación Electrónica** (formulario, actualización de saldo, impresión de resumen).
-  - **Retiros de Dinero** (formulario, validación, impresión).
-  - **Pago de Servicios Públicos** (servicio seleccionado, referencia y valor, impresión).
-  - **Extracto Bancario** (por mes y año, reporte con movimientos).
-  - **Certificado Bancario** (descargable/imprimible).
-  - **Cerrar Sesión** (redirección al login).
-
-### 💾 Persistencia de Datos
-- Uso de `localStorage` para guardar:
-  - Información de usuarios
-  - Cuentas bancarias
-  - Transacciones
-- Estructura de datos en formato JSON.
+ProyectoJavaScript-CamilaDangond-HugoGonzalez/
+├── html/
+│ ├── certificado.html
+│ ├── consignaciones.html
+│ ├── dashboard.html
+│ ├── extracto.html
+│ ├── footer.html
+│ ├── navbar.html
+│ ├── recargar.html
+│ ├── recuperacionPsw.html
+│ ├── registro.html
+│ ├── retiro.html
+│ ├── servicios.html
+│ └── transacciones.html
+├── imagenes/
+│ └── logo.png
+├── js/
+│ ├── certificado.js
+│ ├── comprobantes.js
+│ ├── dashboard.js
+│ ├── recargar.js
+│ ├── recuperarPsw.js
+│ ├── registro.js
+│ ├── resumen.js
+│ ├── retorno.js
+│ └── script.js
+├── styles/
+│ ├── certificado.css
+│ ├── comprobantes.css
+│ ├── dashboard.css
+│ ├── footer.css
+│ ├── index.css
+│ ├── navbar.css
+│ ├── normalize.css
+│ ├── recuperarPsw.css
+│ ├── registro.css
+│ ├── style.css
+│ └── transacciones.css
+├── index.html
+└── README.md
 
 ---
 
-## 📱 Diseño Responsive
+## 🔑 Funcionalidades Principales
 
-- Compatible con dispositivos **móviles**, **tablets** y **desktop**.
-- Utiliza **fuentes modernas** (Google Fonts).
-- Paleta de colores profesional:
-- Interfaz clara y mensajes de error/success destacados.
+### Inicio de Sesión
+- Formulario con tipo/número de identificación y contraseña.
+- Validación y redirección al `dashboard`.
+
+### Registro de Usuario
+- Formulario con validación en tiempo real.
+- Generación automática de número de cuenta y fecha de creación.
+- Resumen final del registro.
+
+### Recuperación de Contraseña
+- Validación por número de documento y correo electrónico.
+- Generación de nueva contraseña con confirmación.
+
+### Panel de Usuario (Dashboard)
+- Tarjeta con resumen de cuenta.
+- Acceso a todas las funciones principales:
+  - Resumen de transacciones.
+  - Consignación electrónica.
+  - Retiros.
+  - Pagos de servicios.
+  - Generación de extracto.
+  - Certificado bancario.
+
+### Generación de Documentos
+- Archivos imprimibles para:
+  - Certificados
+  - Extractos
+  - Comprobantes de transacción
+
+### Persistencia de Datos
+- Uso de `localStorage` para guardar usuarios, cuentas, transacciones y configuraciones.
 
 ---
 
-## 🚀 Instrucciones para Instalar y Ejecutar
+## 📱 Diseño y Estilo
 
-1. **Clona el repositorio:**
+- **Responsive**: compatible con móviles, tablets y pantallas grandes.
+- **Estilos personalizados**: múltiples archivos CSS por módulo.
+- **Paleta profesional**: colores institucionales, íconos y fuentes modernas.
+
+---
+
+## 🚀 Instrucciones para Ejecutar el Proyecto
+
+1. Clona el repositorio:
    ```bash
    git clone https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez
