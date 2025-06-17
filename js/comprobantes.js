@@ -234,10 +234,12 @@ function imprimir() {
     // Intenta ocultar el botón de cerrar y el botón de imprimir si existen
     const cerrar = comprobante.querySelector('.cerrar');
     const botonImprimir = comprobante.querySelector('input[type="button"], button');
+    const filtro = comprobante.querySelector('.filtro');
 
     if (cerrar) cerrar.style.display = 'none';
     if (botonImprimir) botonImprimir.style.display = 'none';
-
+    if (filtro) filtro.style.display = 'none';
+  
     // Imprime solo esa sección
     const contenidoOriginal = document.body.innerHTML;
     const contenidoAImprimir = comprobante.innerHTML;
