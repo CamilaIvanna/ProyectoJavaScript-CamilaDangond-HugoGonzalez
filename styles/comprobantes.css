@@ -12,3 +12,8 @@
 #btn-imprimir{
     margin-top: 2rem;
 }
+.container-grid > div {
+  white-space: normal;    
+  word-break: break-word; 
+  overflow-wrap: break-word;
+}
