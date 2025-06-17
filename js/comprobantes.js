@@ -239,7 +239,7 @@ function pagar() {
 
         const referencia = generarRef(); // Genera y devuelve la referencia (ya se muestra en #referencia)
         const { iso, fecha, hora } = obtenerFechaYHora();
-        
+
         // Intentar actualizar el saldo y registrar la transacción
         const resultado = actualizarSaldoYTransaccion(valorIngresado, "Pago", servicio, referencia, iso);
 
@@ -293,4 +293,84 @@ function imprimir() {
     // Restaura el contenido original después de imprimir
     document.body.innerHTML = contenidoOriginal;
     window.location.reload(); // recarga para restablecer eventos, estilos, etc.
+}
+function filtrarPorFecha() {
+     
+    const fechaInicio = document.getElementById('fecha-inicio')?.value;
+    const fechaFin = document.getElementById('fecha-fin')?.value;
+
+    if (!fechaInicio || !fechaFin) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Fechas requeridas',
+            text: 'Debes seleccionar una fecha de inicio y una de fin.'
+        });
+        return;
+    }
+
+    const inicio = new Date(fechaInicio);
+    const fin = new Date(fechaFin);
+    fin.setHours(23, 59, 59, 999); // para incluir todo el día
+
+    if (inicio > fin) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Rango inválido',
+            text: 'La fecha de inicio no puede ser posterior a la fecha de fin.'
+        });
+        return;
+    }
+
+    const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
+    const transacciones = usuarioActivo?.transacciones || [];
+
+    const transaccionesFiltradas = transacciones.filter(tx => {
+        const fechaTx = new Date(tx.fecha);
+        return fechaTx >= inicio && fechaTx <= fin;
+    });
+
+    mostrarTransacciones(transaccionesFiltradas,fechaInicio,fechaFin); // función encargada de renderizar
+}
+function mostrarTransacciones(lista, fechaInicio, fechaFin) {
+    const contenedor = document.querySelector('.transacciones');
+
+    // Si no hay transacciones, NO limpiar tabla, solo mostrar alerta
+    if (lista.length === 0) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Sin resultados',
+            text: 'No se encontraron transacciones en el rango de fechas seleccionado.'
+        });
+        return;
+    }
+    document.getElementById('btn-imprimir').style.display ="block";
+    // Elimina filas previas si sí hay datos
+    const filasAnteriores = contenedor.querySelectorAll('.fila-transacciones');
+    filasAnteriores.forEach(fila => fila.remove());
+
+    // Actualizar encabezado de fechas en el extracto
+    const encabezado = document.querySelector('.encabezado-extracto');// Actualizar encabezado de fechas en el extracto
+    const spanInicio = document.getElementById('fecha-inicio-span');
+    const spanFin = document.getElementById('fecha-fin-span');
+
+    if (spanInicio && spanFin) {
+        spanInicio.textContent = new Date(fechaInicio).toLocaleDateString('es-CO');
+        spanFin.textContent = new Date(fechaFin).toLocaleDateString('es-CO');
+    }
+
+    // Ordenar (opcional) pero sin limitar la cantidad
+    const transaccionesOrdenadas = lista.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+    transaccionesOrdenadas.forEach(tx => {
+        const fila = document.createElement('div');
+        fila.className = 'item-transacciones container-grid fila-transacciones';
+        fila.innerHTML = `
+            <div class="fecha">${new Date(tx.fecha).toLocaleString('es-CO')}</div>
+            <div class="referencia">${tx.referencia || '-'}</div>
+            <div class="tipo-transaccion">${tx.tipo}</div>
+            <div class="descripcion">${tx.concepto}</div>
+            <div class="valor">$${Number(tx.valor).toLocaleString('es-CO')}</div>
+        `;
+        contenedor.appendChild(fila);
+    });
 }

@@ -38,7 +38,7 @@
                         <div>
                             <p>Apreciado cliente <span class="nombre"></span> <span class="tipoId"></span>. <span class="identificacion"></span></p>
                             <p>Número de cuenta: <span class="cuenta">ncuentea</span> - Saldo actual: <span class="saldo">saldo actual</span></p>
-                            <p>Tu extracto de: <span>Fecha inicio</span> - <span>Fecha fin</span> :</p>
+                            <p>Tu extracto de: <span id="fecha-inicio-span">Fecha inicio</span> - <span id="fecha-fin-span">Fecha fin</span> :</p>
                         </div>
                     </div>
                     <div class="item-transacciones container-grid encabezado-transacciones">
@@ -56,13 +56,14 @@
                         <div class="valor">$1'000.000</div>
                     </div>
                 </div>
-                <input type="button" value="Imprimir" onclick="imprimir()">
+                <input type="button" value="Imprimir" onclick="imprimir()" hidden id="btn-imprimir">
             </div>
         </section>
     </main>
     <footer id="footer"></footer>
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js"></script> 
     <script src="/js/comprobantes.js"></script>
     <script src="/js/datos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
