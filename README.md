@@ -1,8 +1,6 @@
 # 🏦 Banco Acme - Aplicación Web de Autogestión Bancaria
 
-<p align="center">
-  <img src="imagenes/iconLogo.png" alt="Logo Banco Acme" width="150">
-</p>
+![Logo Banco Acme](/imagenes/iconLogo.png)
 
 Aplicación desarrollada como solución integral de autogestión para los usuarios del Banco Acme. Permite el registro de usuarios, la gestión de cuentas, realización de transacciones, pagos de servicios, generación de extractos y certificados. Toda la información se persiste en el navegador usando `localStorage` con estructuras JSON.
 
@@ -22,59 +20,46 @@ Aplicación desarrollada como solución integral de autogestión para los usuari
 ---
 
 ## 📁 Estructura del Proyecto
-
----
-
-## 🔑 Funcionalidades Principales
-
-### 🔐 Inicio de Sesión
-- Formulario con tipo/número de identificación y contraseña.
-- Validación de credenciales y redirección al panel de usuario.
-
-### 📝 Registro de Usuario
-- Formulario validado en tiempo real.
-- Generación automática de número de cuenta y fecha.
-- Vista previa del resumen antes de guardar.
-
-### 🔑 Recuperación de Contraseña
-- Validación por número de documento y correo.
-- Definición de nueva contraseña con confirmación.
-
-### 🏠 Panel Principal del Usuario (Dashboard)
-- Tarjeta resumen de cuenta.
-- Módulos interactivos:
-  - Transacciones recientes.
-  - Consignaciones.
-  - Retiros.
-  - Pagos de servicios.
-  - Extractos bancarios.
-  - Certificados.
-  - Cierre de sesión.
-
-### 📄 Generación de Documentos
-- Certificados y extractos bancarios imprimibles.
-- Comprobantes de todas las transacciones realizadas.
-
-### 💾 Persistencia de Datos
-- Uso completo de `localStorage`.
-- Estructuras organizadas con objetos y arreglos en JSON.
-
----
-
-## 📱 Diseño y Estilo
-
-- ✅ Totalmente **responsive**: adaptado a celulares, tablets y escritorio.
-- 🎨 Diseño moderno: colores sobrios y fuentes legibles.
-- 🧩 Estructura modular: CSS separados por funcionalidad.
-
----
-
-## 🚀 Instrucciones para Ejecutar el Proyecto
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez
-
+ProyectoJavaScript-CamilaDangond-HugoGonzalez/
+├── html/
+│ ├── certificado.html
+│ ├── consignaciones.html
+│ ├── dashboard.html
+│ ├── extracto.html
+│ ├── footer.html
+│ ├── navbar.html
+│ ├── recargar.html
+│ ├── recuperacionPsw.html
+│ ├── registro.html
+│ ├── retiro.html
+│ ├── servicios.html
+│ └── transacciones.html
+├── imagenes/
+│ └── logo.png
+├── js/
+│ ├── certificado.js
+│ ├── comprobantes.js
+│ ├── dashboard.js
+│ ├── recargar.js
+│ ├── recuperarPsw.js
+│ ├── registro.js
+│ ├── resumen.js
+│ ├── retorno.js
+│ └── script.js
+├── styles/
+│ ├── certificado.css
+│ ├── comprobantes.css
+│ ├── dashboard.css
+│ ├── footer.css
+│ ├── index.css
+│ ├── navbar.css
+│ ├── normalize.css
+│ ├── recuperarPsw.css
+│ ├── registro.css
+│ ├── style.css
+│ └── transacciones.css
+├── index.html
+└── README.md
 
 ---
 
@@ -126,4 +111,4 @@ Aplicación desarrollada como solución integral de autogestión para los usuari
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez
+   git clone https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez 
