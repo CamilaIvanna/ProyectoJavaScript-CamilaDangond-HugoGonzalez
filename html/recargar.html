@@ -6,6 +6,7 @@
     <title>Recarga tu cuenta</title>
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/comprobantes.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imagenes/favicon.png" type="image/x-icon">
 </head>
@@ -46,11 +47,51 @@
                 </div> 
                     <input type="button" value="Recargar" onclick="recargar()">
                 </form>
+            </div>
+      <div class="contenedor-formularios contenedor-comprobante oculto">
+                <div class="container-flex flex-center flex-column inicio-up">
+                    <a href="/html/dashboard.html" class="cerrar container-flex flex-center" ><img src="/imagenes/cerrar.png" alt="" class="img-cerrar"></a>   
+                    <img src="/imagenes/iconLogo.png" alt="" class="formulario-logo">
+                    <div class="container-flex flex-center">
+                        <h1>Recarga Exitosa </h1>
+                        <img src="/imagenes/exito.png" alt="" class="img-exito">
+                    </div>
+                    <h3 class="referencias" id="referencia"><b>REF: </b >DRGFERTHG0 </h3>
+                </div>
+                    <div class="container-flex flex-column flex-comprobante">
+                        <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center"><b>Fecha</b></div>
+                        <div class="rta fecha container-flex flex-center">01/01/01 00:00:00</div>
+                    </div>
+                    <div class="container-flex flex-column flex-comprobante">
+                        <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center"><b>N° de cuenta recargada</b></div>
+                        <div class="rta cuenta container-flex flex-center">30293490330</div>
+                    </div>
+                    <div class="container-flex flex-column flex-comprobante">
+                        <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center"><b>Tipo de transacción</b></div>
+                        <div class="rta tipo container-flex flex-center">Recarga</div>
+                    </div>
+                    <div class="container-flex flex-column flex-comprobante">
+                        <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center "><b>Descripción del movimiento</b></div>
+                        <div class="rta descripción container-flex flex-center"><p class="baco-user">Recarga por canal electrónico desde banco - usuario</p></div>
+                    </div>
+
+                    <div class="container-grid fila-comprobante">
+                        <div class="indicador container-flex flex-center"><b>Valor de la recarga</b></div>
+                        <div class="rta valor container-flex flex-center">$100.000</div>
+                    </div>
+                </div>
+                <input type="button" value="Imprimir" id="btn-imprimir" onclick="imprimir()">
             </div>   
         </section>
     </main>
     <footer id="footer"></footer>  
     <script src="/js/script.js"></script>
     <script src="/js/recargar.js"></script>
+    <script src="/js/comprobantes.js"></script>
+    <script src="/js/datos.js"></script>
 </body>
 </html>
