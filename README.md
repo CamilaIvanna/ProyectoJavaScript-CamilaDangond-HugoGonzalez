@@ -9,6 +9,11 @@ Aplicación desarrollada como
 
 ---
 
+## Diseño UX UIS
+
+👉 [Figma: Proyecto JavaScript - Camila Dangond & Hugo González](https://www.figma.com/design/gWPi8ylS6TtW7UXMly8LJ4/ACME-bank?node-id=0-1&t=GuPT4Gccgh4mcN09-1)
+---
+
 ## 🌐 Repositorio
 
 👉 [GitHub: Proyecto JavaScript - Camila Dangond & Hugo González](https://github.com/CamilaIvanna/ProyectoJavaScript-CamilaDangond-HugoGonzalez)
